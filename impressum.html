@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum — Quro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F5F5F7;
+            --surface: #FFFFFF;
+            --text: #1C1C2E;
+            --text2: #3C3C50;
+            --text3: #6E6E82;
+            --text4: #9C9CB0;
+            --purple: #6C5CE7;
+            --border: rgba(0,0,0, 0.06);
+            --sh2: 0 2px 8px rgba(0,0,0, 0.05);
+            --radius-lg: 20px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #101014;
+                --surface: #1A1A24;
+                --text: #EEEEF2;
+                --text2: #C8C8D4;
+                --text3: #9090A4;
+                --text4: #5E5E72;
+                --purple: #A78BFA;
+                --border: rgba(255,255,255, 0.08);
+                --sh2: 0 2px 8px rgba(0,0,0, 0.30);
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--purple);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+        .back:hover { text-decoration: underline; }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--sh2);
+            padding: 28px 24px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text2);
+            margin-bottom: 12px;
+        }
+
+        p:last-child { margin-bottom: 0; }
+
+        a {
+            color: var(--purple);
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 12px;
+            color: var(--text4);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <a href="index.html" class="back">&larr; Back</a>
+
+        <h1>Impressum</h1>
+
+        <div class="card">
+            <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+            <p>Oleh Herasymenko<br>
+            Friedrichshafen, Germany</p>
+        </div>
+
+        <div class="card">
+            <h2>Kontakt / Contact</h2>
+            <p>Email: <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a><br>
+            Website: <a href="https://0g3ra.github.io/quro-legal">https://0g3ra.github.io/quro-legal</a></p>
+        </div>
+
+        <div class="card">
+            <h2>Verantwortlich f&uuml;r den Inhalt gem&auml;&szlig; &sect; 18 Abs. 2 MStV</h2>
+            <p>Oleh Herasymenko<br>
+            Friedrichshafen, Germany</p>
+        </div>
+
+        <div class="card">
+            <h2>EU-Streitschlichtung / EU Dispute Resolution</h2>
+            <p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br>
+            <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a></p>
+            <p>The European Commission provides an online dispute resolution platform:<br>
+            <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a></p>
+        </div>
+
+        <div class="card">
+            <h2>Haftungsausschluss / Disclaimer</h2>
+            <p>Quro is a personal finance tracking tool for informational purposes only. It does not provide financial advice, investment recommendations, tax advice, or any regulated financial services. See our <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a> for full details.</p>
+        </div>
+
+        <div class="footer">&copy; 2026 Quro. All rights reserved.</div>
+    </div>
+</body>
+</html>
