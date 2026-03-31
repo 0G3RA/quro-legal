@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quro — Legal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F5F5F7;
+            --surface: #FFFFFF;
+            --text: #1C1C2E;
+            --text2: #3C3C50;
+            --text3: #6E6E82;
+            --purple: #6C5CE7;
+            --purpleSoft: rgba(108,92,231, 0.06);
+            --purpleGlow: rgba(108,92,231, 0.10);
+            --border: rgba(0,0,0, 0.06);
+            --border2: rgba(0,0,0, 0.10);
+            --sh2: 0 2px 8px rgba(0,0,0, 0.05);
+            --radius-lg: 20px;
+            --radius-md: 16px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #101014;
+                --surface: #1A1A24;
+                --text: #EEEEF2;
+                --text2: #C8C8D4;
+                --text3: #9090A4;
+                --purple: #A78BFA;
+                --purpleSoft: rgba(167,139,250, 0.12);
+                --purpleGlow: rgba(167,139,250, 0.15);
+                --border: rgba(255,255,255, 0.08);
+                --border2: rgba(255,255,255, 0.12);
+                --sh2: 0 2px 8px rgba(0,0,0, 0.30);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text3);
+            margin-bottom: 40px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .links a {
+            display: block;
+            padding: 18px 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--sh2);
+            text-decoration: none;
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .links a:hover {
+            border-color: var(--purple);
+            background: var(--purpleSoft);
+            box-shadow: 0 0 0 3px var(--purpleGlow);
+        }
+
+        .links a span {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text3);
+            margin-top: 4px;
+        }
+
+        .footer {
+            margin-top: 48px;
+            font-size: 12px;
+            color: var(--text3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-text">Quro</div>
+        <div class="subtitle">Legal Information</div>
+        <div class="links">
+            <a href="privacy.html">
+                Privacy Policy
+                <span>How we handle your data</span>
+            </a>
+            <a href="terms.html">
+                Terms of Use
+                <span>End User License Agreement</span>
+            </a>
+        </div>
+        <div class="footer">&copy; 2026 Quro. All rights reserved.</div>
+    </div>
+</body>
+</html>

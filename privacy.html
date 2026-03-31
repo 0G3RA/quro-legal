@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Quro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F5F5F7;
+            --surface: #FFFFFF;
+            --surface3: #F2F2F5;
+            --text: #1C1C2E;
+            --text2: #3C3C50;
+            --text3: #6E6E82;
+            --text4: #9C9CB0;
+            --purple: #6C5CE7;
+            --purpleSoft: rgba(108,92,231, 0.06);
+            --purpleGlow: rgba(108,92,231, 0.10);
+            --border: rgba(0,0,0, 0.06);
+            --border2: rgba(0,0,0, 0.10);
+            --sh1: 0 1px 2px rgba(0,0,0, 0.03);
+            --sh2: 0 2px 8px rgba(0,0,0, 0.05);
+            --radius-xl: 24px;
+            --radius-lg: 20px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --radius-xs: 8px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #101014;
+                --surface: #1A1A24;
+                --surface3: #252530;
+                --text: #EEEEF2;
+                --text2: #C8C8D4;
+                --text3: #9090A4;
+                --text4: #5E5E72;
+                --purple: #A78BFA;
+                --purpleSoft: rgba(167,139,250, 0.12);
+                --purpleGlow: rgba(167,139,250, 0.15);
+                --border: rgba(255,255,255, 0.08);
+                --border2: rgba(255,255,255, 0.12);
+                --sh1: 0 1px 2px rgba(0,0,0, 0.20);
+                --sh2: 0 2px 8px rgba(0,0,0, 0.30);
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--purple);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+        .back:hover { text-decoration: underline; }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text3);
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--sh2);
+            padding: 28px 24px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text2);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text2);
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            font-size: 15px;
+            color: var(--text2);
+            margin-bottom: 6px;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--purple);
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+            padding: 10px 12px;
+            background: var(--surface3);
+            border-bottom: 1px solid var(--border2);
+        }
+
+        th:first-child { border-radius: var(--radius-xs) 0 0 0; }
+        th:last-child { border-radius: 0 var(--radius-xs) 0 0; }
+
+        td {
+            padding: 10px 12px;
+            color: var(--text2);
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 12px;
+            color: var(--text4);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <a href="index.html" class="back">&larr; Back</a>
+
+        <h1>Privacy Policy</h1>
+        <div class="meta">Effective Date: March 31, 2026 &middot; Version 1.0</div>
+
+        <div class="card">
+            <p>This Privacy Policy ("Policy") describes how Oleh Herasymenko ("we", "us", or "our") collects, uses, and protects your personal information when you use the mobile application Quro (the "App").</p>
+            <p>This Policy complies with the General Data Protection Regulation (GDPR) (EU) and other applicable data protection laws.</p>
+            <p><strong>Data Controller:</strong><br>
+            Oleh Herasymenko<br>
+            Email: <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a></p>
+            <p>This Policy is publicly accessible within the App and on our support website. We may update this Policy from time to time.</p>
+        </div>
+
+        <div class="card">
+            <h2>1. Definitions</h2>
+            <ul>
+                <li><strong>Personal Data</strong> — any information relating to an identified or identifiable natural person.</li>
+                <li><strong>Processing</strong> — any operation performed on personal data, including collection, storage, use, disclosure, or deletion.</li>
+                <li><strong>Data Controller</strong> — Oleh Herasymenko, the entity that determines the purposes and means of processing personal data.</li>
+                <li><strong>User</strong> — any natural person who uses the App.</li>
+                <li><strong>App</strong> — the mobile application Quro, available on the App Store.</li>
+                <li><strong>AI Agent</strong> — the automated assistant within the App that analyzes financial data and generates responses using Google Vertex AI (Gemini models).</li>
+                <li><strong>Financial Transaction</strong> — a record of income or expense manually entered or imported by the User.</li>
+                <li><strong>Bank Statement Import</strong> — a feature allowing Users to photograph, scan, or upload bank statements or receipts for AI-assisted parsing.</li>
+                <li><strong>Family Space</strong> — a shared account feature allowing multiple users to manage finances together.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>2. Principles of Data Processing</h2>
+            <p>We process personal data in accordance with the following principles:</p>
+            <ul>
+                <li>Lawfulness, fairness, and transparency</li>
+                <li>Purpose limitation</li>
+                <li>Data minimization</li>
+                <li>Accuracy</li>
+                <li>Storage limitation</li>
+                <li>Integrity and confidentiality</li>
+                <li>Accountability</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>3. Information We Collect</h2>
+
+            <h3>Information You Provide</h3>
+            <ul>
+                <li><strong>Account data:</strong> collected upon registration via Sign in with Apple or Google Sign-In. We collect: display name (from your Apple or Google profile, optional), profile photo URL (from your Apple or Google profile, optional), and email address (stored in Firebase Authentication only, not in our main database)</li>
+                <li><strong>Financial data:</strong> transaction amounts, currencies, categories, comments, dates, and tags entered manually or imported by you</li>
+                <li><strong>Budget and goal data:</strong> budget limits, savings goals, and scheduled recurring transactions</li>
+                <li><strong>Receipt and bank statement content:</strong> image and document data from files you choose to scan or import (see Section 6a)</li>
+                <li><strong>AI chat messages:</strong> your messages to the AI assistant and the assistant's responses, including tool call data (transaction lookups, balance queries)</li>
+                <li><strong>Currency preference:</strong> your selected primary currency, collected during onboarding</li>
+            </ul>
+
+            <h3>Automatically Collected Information</h3>
+            <ul>
+                <li><strong>Device information:</strong> device model, operating system version, app version</li>
+                <li><strong>Device tokens:</strong> push notification tokens (FCM) stored for delivering notifications</li>
+                <li><strong>Crash data:</strong> technical crash reports including device info and stack traces, collected via Firebase Crashlytics. A hashed user identifier is associated with crash reports to help diagnose issues; this identifier is cleared upon logout.</li>
+                <li><strong>Usage analytics:</strong> app events collected via Firebase Analytics, including: login method, logout, account deletion, onboarding completion, paywall views</li>
+            </ul>
+
+            <h3>Purchase Information</h3>
+            <ul>
+                <li>Subscription tier, status, renewal date, and transaction history managed via RevenueCat and Apple In-App Purchase</li>
+            </ul>
+
+            <h3>Data Collected Through Device Permissions</h3>
+            <ul>
+                <li><strong>Camera:</strong> used via document scanner (VNDocumentCameraViewController) to capture receipts and bank statements directly. Requires camera permission grant via the standard iOS permission prompt.</li>
+                <li><strong>Photos (via system PhotosPicker):</strong> used to select existing photos of receipts or bank statements from your photo library. Uses the system picker which does not require explicit Photos permission.</li>
+                <li><strong>Files:</strong> used via system file picker (fileImporter) to select PDF, CSV, Excel (XLSX), JPEG, and PNG files for bank statement import. No special permission required beyond standard file access.</li>
+                <li><strong>Push Notifications:</strong> used to deliver reminders and budget alerts. Requested via the standard iOS permission prompt when you first enable reminders in the App.</li>
+            </ul>
+
+            <p>We do not collect location data, advertising identifiers (IDFA), or any tracking data.</p>
+            <p>We do not collect special categories of personal data (health data, biometric data for identification, political opinions, etc.).</p>
+            <p>Our Service is not intended for children under 13 (or 16 in the EU), and we do not knowingly collect their data. If we learn that we have collected personal data from a child without verifiable parental consent, we will take steps to delete that information promptly.</p>
+        </div>
+
+        <div class="card">
+            <h2>4. How We Use Your Information</h2>
+            <p>We use your personal data for the following purposes:</p>
+            <ul>
+                <li>To provide and maintain the App and its features</li>
+                <li>To operate the AI assistant and generate financial insights based on your data</li>
+                <li>To process and manage your subscription via RevenueCat</li>
+                <li>To send push notifications (reminders, budget alerts) if you have enabled them</li>
+                <li>To analyze App usage in anonymized form to improve functionality (Firebase Analytics)</li>
+                <li>To diagnose and fix technical issues (Firebase Crashlytics)</li>
+                <li>To comply with legal obligations</li>
+                <li>To respond to your support inquiries</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>5. Legal Basis for Processing (GDPR)</h2>
+            <p>We process your personal data based on the following legal grounds:</p>
+            <ul>
+                <li><strong>Performance of a contract</strong> — providing access to the App and its features</li>
+                <li><strong>Your consent</strong> — when you enable camera access, AI features, or push notifications</li>
+                <li><strong>Legitimate interests</strong> — improving the App through anonymized analytics, diagnosing crashes, ensuring security</li>
+                <li><strong>Legal obligations</strong> — compliance with applicable laws</li>
+            </ul>
+            <p>You may withdraw your consent at any time by contacting us at <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a> or by adjusting your in-App settings or iOS Settings. Withdrawing consent for AI features disables those features while all other App functionality remains available.</p>
+        </div>
+
+        <div class="card">
+            <h2>6. Third-Party Services</h2>
+            <p>We share data with the following third-party service providers solely to operate the App:</p>
+
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Provider</th>
+                            <th>Purpose</th>
+                            <th>Data Shared</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Firebase Auth</td><td>Google LLC</td><td>User authentication</td><td>User ID, email</td></tr>
+                        <tr><td>Google Sign-In</td><td>Google LLC</td><td>OAuth authentication</td><td>OAuth token, basic profile</td></tr>
+                        <tr><td>Cloud Firestore</td><td>Google LLC</td><td>Primary database</td><td>All user data (see Section 3)</td></tr>
+                        <tr><td>Cloud Functions</td><td>Google LLC</td><td>Server-side logic</td><td>Processed per request</td></tr>
+                        <tr><td>Firebase Crashlytics</td><td>Google LLC</td><td>Crash reporting</td><td>Device info, crash logs, app version, hashed user ID</td></tr>
+                        <tr><td>Firebase Analytics</td><td>Google LLC</td><td>Usage analytics</td><td>App events, login method</td></tr>
+                        <tr><td>Google Vertex AI</td><td>Google LLC</td><td>AI assistant, receipt &amp; statement parsing</td><td>Financial data, chat messages, document images (see Section 6a)</td></tr>
+                        <tr><td>RevenueCat</td><td>RevenueCat, Inc.</td><td>Subscription management</td><td>Purchase history, subscription status, user ID</td></tr>
+                        <tr><td>Firebase Cloud Messaging</td><td>Google LLC</td><td>Push notifications</td><td>Device push token</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>All Google services operate under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and Google Cloud Data Processing Addendum (DPA).</p>
+            <p>All Firebase and Vertex AI services process data within the European Union (europe-west1, Belgium / eur3 Europe multi-region), ensuring GDPR compliance.</p>
+            <p>We do not sell your personal data to third parties.</p>
+        </div>
+
+        <div class="card">
+            <h2>6a. Third-Party AI Services (Google Vertex AI)</h2>
+            <p>To provide AI-powered features (financial chat assistant, receipt scanning, bank statement import), we send certain data to Google Vertex AI.</p>
+            <p>AI features are powered by Google Vertex AI (Gemini models). All AI processing occurs within the European Union (europe-west1 region). Google does not use your data to train or improve its models. Data is processed in accordance with Google Cloud's Data Processing Addendum and is not retained by Google after processing.</p>
+
+            <p><strong>Consent:</strong> Before you use AI features for the first time, the App displays a consent screen clearly explaining what data will be sent to Google Vertex AI and for what purpose. AI features are only activated after you explicitly confirm your consent. You may withdraw this consent at any time in App Settings, which will disable AI features while all other App functionality remains available.</p>
+
+            <h3>Data we send to Google Vertex AI</h3>
+            <p><strong>For receipt and bank statement scanning:</strong></p>
+            <ul>
+                <li>The captured image or uploaded document (PDF, CSV, Excel, JPEG, PNG) as base64 data</li>
+                <li>OCR text pre-extracted on your device as a processing hint</li>
+                <li>Your category names and types (to improve categorization accuracy)</li>
+                <li>Language hint</li>
+            </ul>
+
+            <p><strong>For AI chat assistant (via tool calls based on your queries):</strong></p>
+            <ul>
+                <li>Your chat messages and conversation history (up to ~32,000 characters of recent context)</li>
+                <li>Financial data relevant to your query only: transaction descriptions, amounts, dates, categories, account names, budget limits, scheduled payments, currency rates</li>
+                <li>Session context: currency preference, timezone, locale</li>
+            </ul>
+
+            <h3>Data we do NOT send to Google Vertex AI</h3>
+            <ul>
+                <li>Your name or email address</li>
+                <li>Firebase User ID or Account ID</li>
+                <li>Device identifiers</li>
+                <li>Your full transaction history — only data directly relevant to your query is retrieved and sent</li>
+            </ul>
+
+            <p><strong>Privacy masking:</strong> In Family Space, other members' individual data is masked before being sent to AI.</p>
+            <p><strong>AI features are optional.</strong> The free tier provides full access to manual transaction entry, budgets, accounts, and scheduled payments without using AI. AI features (chat assistant, receipt scanning, bank statement import) require a paid subscription.</p>
+        </div>
+
+        <div class="card">
+            <h2>6b. Financial Disclaimer</h2>
+            <p>Quro is a personal finance tracking tool for informational purposes only.</p>
+            <p>The App and its AI assistant do not provide financial advice, investment recommendations, tax advice, or any regulated financial services. All AI-generated analysis, categorizations, and suggestions are produced automatically based solely on data you provide and are intended for informational purposes only.</p>
+            <p>You should not make financial decisions based solely on AI-generated content. Always consult a qualified financial professional for financial, investment, or tax advice.</p>
+            <p>We are not a financial institution, bank, licensed financial advisor, or regulated financial service provider.</p>
+        </div>
+
+        <div class="card">
+            <h2>7. Data Storage and Retention</h2>
+            <p>All user data is stored in Google Cloud Firestore within the European Union (eur3 multi-region Europe / europe-west1, Belgium).</p>
+
+            <h3>Categories of data stored on our servers</h3>
+            <ul>
+                <li>User profile (display name, profile photo URL, currency and language preferences)</li>
+                <li>Financial transactions, accounts (bills), budgets, categories, and scheduled plans</li>
+                <li>AI chat history (messages, tool call results, and generated artifacts)</li>
+                <li>Receipt scan results (extracted text and structured transaction data)</li>
+                <li>Push notification tokens</li>
+                <li>Subscription status and AI usage records (token count, duration — no personal content)</li>
+            </ul>
+
+            <p><strong>Receipt and bank statement images and documents</strong> are not stored on our servers. They are processed in memory during Cloud Function execution and immediately discarded. Only the structured result (parsed transactions) is saved to Firestore.</p>
+            <p><strong>Retention period:</strong> Your data is retained for as long as your account is active. Upon account deletion, all personal data is permanently and irreversibly deleted immediately — there is no grace period or recovery option (see Section 11).</p>
+        </div>
+
+        <div class="card">
+            <h2>8. Your Rights</h2>
+            <p>All users of the App have the following rights regarding their personal data:</p>
+            <ul>
+                <li><strong>Right to access</strong> — request a copy of your personal data by contacting us at <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a></li>
+                <li><strong>Right to rectification</strong> — correct inaccurate data directly in the App or by contacting us</li>
+                <li><strong>Right to erasure</strong> — delete your account and all associated data directly in the App (Settings &rarr; Account Settings &rarr; Delete Account)</li>
+                <li><strong>Right to data portability</strong> — request an export of your personal data by contacting us at <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a></li>
+            </ul>
+
+            <h3>Additional rights for users in the European Union (GDPR)</h3>
+            <ul>
+                <li><strong>Right to restrict processing</strong> — limit how we use your data</li>
+                <li><strong>Right to object</strong> — object to processing based on legitimate interests</li>
+                <li><strong>Right to withdraw consent</strong> — withdraw consent for AI features or notifications at any time in App Settings or iOS Settings</li>
+                <li><strong>Right to lodge a complaint</strong> — you have the right to lodge a complaint with your local data protection authority. For Germany: <a href="https://www.bfdi.bund.de">Bundesbeauftragte für den Datenschutz und die Informationsfreiheit</a></li>
+            </ul>
+            <p>To exercise any of these rights, contact us at <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a>. We will respond within 30 days.</p>
+        </div>
+
+        <div class="card">
+            <h2>9. Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal data:</p>
+            <ul>
+                <li>All data transmitted between the App and our servers is encrypted using HTTPS/TLS</li>
+                <li>Firebase Security Rules restrict data access on a per-user and per-account basis</li>
+                <li>Server-side logic is executed via authenticated Cloud Functions using verified Firebase ID tokens</li>
+                <li>Access to production systems is restricted to authorized personnel only</li>
+                <li>AI processing occurs within Google Cloud's secure infrastructure under DPA</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>10. Data Breach Notification</h2>
+            <p>In the event of a personal data breach that is likely to result in a risk to your rights and freedoms, we will notify affected users without undue delay and, where required, within 72 hours of becoming aware of the breach. Notification will be provided via the email address associated with your account or via a prominent notice within the App.</p>
+        </div>
+
+        <div class="card">
+            <h2>11. Account Deletion</h2>
+            <p>You may delete your account at any time from <strong>Settings &rarr; Account Settings &rarr; Delete Account</strong>. Deletion requires re-authentication for security.</p>
+
+            <p><strong>Upon account deletion, the following is permanently and irreversibly deleted:</strong></p>
+            <ul>
+                <li>All personal financial data: transactions, accounts (bills), categories, budgets, scheduled payments</li>
+                <li>AI chat history, receipts, AI usage records</li>
+                <li>User profile and settings</li>
+                <li>Firebase Authentication record</li>
+                <li>Subscription status record</li>
+            </ul>
+
+            <p><strong>Deletion is immediate. There is no grace period or recovery option.</strong></p>
+            <p>Active subscriptions managed by Apple are not automatically cancelled upon account deletion. You must cancel your subscription separately via <strong>iOS Settings &rarr; Subscriptions</strong>.</p>
+            <p><strong>If you are a member (not owner) of a Family Space:</strong> your membership is removed automatically upon account deletion. Shared data you contributed (transactions, bills) remains in the Family Space as it belongs to the shared account, not to you individually.</p>
+            <p><strong>If you are the owner of a Family Space:</strong> you must delete the Family Space before deleting your account (see Section 12).</p>
+            <p>After deleting your account, you may create a new account and restore your active subscription via <strong>Restore Purchases</strong> in the App. Previously entered personal data cannot be recovered.</p>
+        </div>
+
+        <div class="card">
+            <h2>12. Family Space</h2>
+            <p>If you participate in a Family Space, certain data — including transactions, budgets, and account balances — is shared with all members of that Family Space. You should only join or invite others to a Family Space with their explicit consent.</p>
+            <p><strong>Family Space deletion:</strong> The owner may delete the Family Space at any time. Upon deletion, all shared financial data (transactions, bills, categories, budgets, receipts, AI chat history) is permanently deleted and all members immediately lose access. The owner's subscription is not affected and may be applied to a new Family Space.</p>
+            <p><strong>Member removal:</strong> The owner may remove any member at any time. The removed member loses access to the shared account immediately. Data contributed by the removed member remains in the shared account. The removed member's personal account and data are not affected.</p>
+        </div>
+
+        <div class="card">
+            <h2>13. International Data Transfers</h2>
+            <p>All primary data storage and processing occurs within the European Union (Google Cloud, eur3 / europe-west1).</p>
+            <p>RevenueCat may process subscription data outside the EEA. Where data is transferred outside the EEA, appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
+        </div>
+
+        <div class="card">
+            <h2>14. Changes to This Policy</h2>
+            <p>We may update this Policy from time to time. We will notify you of any material changes by posting the new Policy within the App and on our support website. The Effective Date at the top of this document will be updated accordingly. Continued use of the App after changes constitutes acceptance of the updated Policy.</p>
+        </div>
+
+        <div class="card">
+            <h2>15. Contact Us</h2>
+            <p>For questions about this Policy or to exercise your rights, contact us:</p>
+            <p>Oleh Herasymenko<br>
+            Email: <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a></p>
+        </div>
+
+        <div class="footer">&copy; 2026 Quro. All rights reserved.</div>
+    </div>
+</body>
+</html>

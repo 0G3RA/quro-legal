@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use — Quro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F5F5F7;
+            --surface: #FFFFFF;
+            --surface3: #F2F2F5;
+            --text: #1C1C2E;
+            --text2: #3C3C50;
+            --text3: #6E6E82;
+            --text4: #9C9CB0;
+            --purple: #6C5CE7;
+            --purpleSoft: rgba(108,92,231, 0.06);
+            --purpleGlow: rgba(108,92,231, 0.10);
+            --red: #DC2626;
+            --redSoft: rgba(220,38,38, 0.06);
+            --border: rgba(0,0,0, 0.06);
+            --border2: rgba(0,0,0, 0.10);
+            --sh1: 0 1px 2px rgba(0,0,0, 0.03);
+            --sh2: 0 2px 8px rgba(0,0,0, 0.05);
+            --radius-xl: 24px;
+            --radius-lg: 20px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --radius-xs: 8px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #101014;
+                --surface: #1A1A24;
+                --surface3: #252530;
+                --text: #EEEEF2;
+                --text2: #C8C8D4;
+                --text3: #9090A4;
+                --text4: #5E5E72;
+                --purple: #A78BFA;
+                --purpleSoft: rgba(167,139,250, 0.12);
+                --purpleGlow: rgba(167,139,250, 0.15);
+                --red: #F87171;
+                --redSoft: rgba(248,113,113, 0.12);
+                --border: rgba(255,255,255, 0.08);
+                --border2: rgba(255,255,255, 0.12);
+                --sh1: 0 1px 2px rgba(0,0,0, 0.20);
+                --sh2: 0 2px 8px rgba(0,0,0, 0.30);
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--purple);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+        .back:hover { text-decoration: underline; }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text3);
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--sh2);
+            padding: 28px 24px;
+            margin-bottom: 16px;
+        }
+
+        .card.disclaimer {
+            border-color: var(--red);
+            background: var(--redSoft);
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text2);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text2);
+            margin-bottom: 12px;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            font-size: 15px;
+            color: var(--text2);
+            margin-bottom: 6px;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--purple);
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 12px;
+            color: var(--text4);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <a href="index.html" class="back">&larr; Back</a>
+
+        <h1>Terms of Use (EULA)</h1>
+        <div class="meta">Effective Date: March 31, 2026 &middot; Version 1.0</div>
+
+        <div class="card">
+            <p>This End User License Agreement ("Agreement") is a legal agreement between you and Oleh Herasymenko ("Licensor", "we", "us", or "our") governing your use of the mobile application Quro (the "App"), available on the App Store.</p>
+            <p>By downloading, installing, or using the App, you agree to be bound by this Agreement. If you do not agree, do not use the App.</p>
+            <p><strong>IMPORTANT:</strong> This Agreement incorporates by reference the Licensed Application End User License Agreement published by Apple, Inc. (available at <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standard EULA</a>). The terms of this Agreement are not less restrictive than Apple's standard EULA terms.</p>
+        </div>
+
+        <div class="card">
+            <h2>1. Scope of License</h2>
+            <p>The license granted to you for the App is limited to a non-transferable license to use the App on any Apple-branded products that you own or control, as permitted by the Usage Rules set forth in the Apple Media Services Terms and Conditions.</p>
+            <p>This license does not allow you to use the App on any Apple device you do not own or control. Except as provided in the Usage Rules, you may not distribute or make the App available over a network where it could be used by multiple devices simultaneously.</p>
+        </div>
+
+        <div class="card disclaimer">
+            <h2>2. NOT Financial Advice — Important Disclaimer</h2>
+            <p class="uppercase">READ CAREFULLY.</p>
+            <p class="uppercase">Quro is a personal finance tracking tool for informational purposes only. The App does not constitute financial advice, investment advice, tax advice, legal advice, or any other regulated financial service.</p>
+            <p class="uppercase">The AI assistant within the App may generate suggestions, analysis, or recommendations based on the data you provide. These are produced automatically by an artificial intelligence system and are for informational purposes only. They do not constitute professional financial advice and should not be relied upon as the basis for any financial decision.</p>
+            <p class="uppercase">We are not a licensed financial advisor, bank, investment firm, or regulated financial institution. You are solely responsible for your financial decisions. Always consult a qualified financial professional before making significant financial decisions.</p>
+        </div>
+
+        <div class="card">
+            <h2>3. AI-Generated Content Disclaimer</h2>
+            <p>The Service uses Google Vertex AI to provide AI-powered features including receipt scanning, transaction import, and financial chat assistant. Before you use AI features for the first time, the App will display a consent screen explaining what data is sent to Google Vertex AI. AI features are only activated after you explicitly confirm your consent. You may withdraw consent at any time in App Settings.</p>
+            <p>By using AI features, you acknowledge that your financial data (transaction descriptions, receipt images, document content, category names) is sent to Google Vertex AI for processing. Google processes this data solely to provide the requested service, does not use it for model training, and does not retain it after processing. All AI processing occurs within the EU (europe-west1 region).</p>
+            <p>You further acknowledge and agree that:</p>
+            <ul>
+                <li>AI-generated content may contain errors, inaccuracies, or omissions</li>
+                <li>AI analysis is based solely on data you provide to the App and may not reflect your complete financial situation</li>
+                <li>AI-generated suggestions are not personalized financial advice</li>
+                <li>You are solely responsible for verifying the accuracy of any AI-generated content before acting on it</li>
+                <li>The Licensor is not liable for any decisions made based on AI-generated content</li>
+            </ul>
+            <p><strong>AI Usage Limits:</strong> AI features are subject to fair usage limits that vary by subscription tier. These limits are designed to ensure quality of service for all users. Current limits are displayed within the App. Licensor reserves the right to adjust limits at any time with reasonable notice.</p>
+        </div>
+
+        <div class="card">
+            <h2>4. User Responsibilities</h2>
+            <p>You agree that:</p>
+            <ul>
+                <li>All financial data entered into the App is provided by you and reflects information you choose to share</li>
+                <li>You are solely responsible for the accuracy and completeness of data you enter</li>
+                <li>You will not use the App for any unlawful purpose or in violation of any applicable laws</li>
+                <li>You will not attempt to reverse engineer, decompile, or disassemble the App</li>
+                <li>You will not share your account credentials with others</li>
+                <li>You will not use the App in any manner that violates the App Store Terms of Service</li>
+                <li>You will only scan or import documents you are authorized to process</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>5. Account Registration and Security</h2>
+            <p>To use the App, you must create an account using Sign in with Apple or Google Sign-In. Email and password registration is not supported.</p>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Maintaining the confidentiality of your account</li>
+                <li>All activity that occurs under your account</li>
+                <li>Notifying us immediately of any unauthorized use of your account at <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>6. Termination</h2>
+            <p><strong>Termination by you:</strong> You may terminate this Agreement at any time by deleting your account (Settings &rarr; Account Settings &rarr; Delete Account) and uninstalling the App.</p>
+            <p><strong>Termination by Licensor:</strong> Licensor reserves the right to suspend or terminate your access to the App at any time, with or without notice, if you breach any term of this Agreement or the App Store Terms of Service, engage in fraudulent or abusive behavior, or if required by law.</p>
+            <p>Upon termination, your license to use the App immediately ceases. Sections 2, 3, 11, 12, 13, and 19 of this Agreement survive termination.</p>
+        </div>
+
+        <div class="card">
+            <h2>7. Family Space</h2>
+            <p>The App offers a Family Space feature that allows multiple users to share a financial account. A Family Space requires at least a Family Basic subscription.</p>
+            <ul>
+                <li>The Family Space owner is responsible for managing membership and access</li>
+                <li>All members of a Family Space can view shared financial data (transactions, budgets, balances)</li>
+                <li>You should only add members to a Family Space with their explicit consent</li>
+                <li>If the owner deletes the Family Space, all shared data is permanently deleted and all members immediately lose access</li>
+                <li>The owner's subscription is not affected by Family Space deletion and may be applied to a new Family Space immediately</li>
+                <li>The owner may remove any member at any time; removed members lose access immediately but their personal account and data are unaffected</li>
+                <li>If you are the owner of a Family Space, you must delete the Family Space before deleting your account</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>8. Payment and Subscriptions</h2>
+
+            <h3>Free Tier</h3>
+            <p>The App offers a free tier that includes full access to core features without a subscription:</p>
+            <ul>
+                <li>Manual transaction entry, editing, and management</li>
+                <li>Accounts (bills) and account balances</li>
+                <li>Categories (default and custom)</li>
+                <li>Budgets and budget tracking</li>
+                <li>Scheduled recurring payments</li>
+                <li>Currency conversion</li>
+            </ul>
+            <p>AI-powered features (chat assistant, receipt scanning, bank statement import) require a paid subscription. Family Space requires at least a Family Basic subscription.</p>
+
+            <h3>Subscription Tiers</h3>
+            <p>The App offers the following auto-renewable subscription plans via Apple In-App Purchase:</p>
+            <p><strong>Personal Account:</strong></p>
+            <ul>
+                <li>Personal Basic — monthly or yearly</li>
+                <li>Personal Pro — monthly or yearly</li>
+            </ul>
+            <p><strong>Family Space:</strong></p>
+            <ul>
+                <li>Family Basic — monthly or yearly</li>
+                <li>Family Pro — monthly or yearly</li>
+            </ul>
+            <p>AI features within each subscription tier are subject to fair usage limits. Current limits are shown within the App and may be updated with reasonable notice.</p>
+
+            <h3>Free Trial</h3>
+            <p>A free trial is available for new subscribers:</p>
+            <ul>
+                <li>Personal subscription: 7-day free trial</li>
+                <li>Family subscription: 3-day free trial</li>
+            </ul>
+            <p>Your subscription will automatically convert to a paid subscription unless cancelled at least 24 hours before the end of the trial period. You will not be charged during the free trial period.</p>
+
+            <h3>Payment Terms</h3>
+            <ul>
+                <li>All payments are processed through Apple's In-App Purchase system via RevenueCat</li>
+                <li>Prices are displayed in your local currency in the App Store</li>
+                <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
+                <li>Apple is not responsible for the App's content or for any claims related to the App</li>
+            </ul>
+
+            <h3>Subscription Renewal and Cancellation</h3>
+            <ul>
+                <li>Your subscription automatically renews at the end of each billing period unless cancelled at least 24 hours before renewal</li>
+                <li>Manage and cancel your subscription via <strong>iOS Settings &rarr; Subscriptions</strong></li>
+                <li>Access to premium features continues until the end of the current billing period after cancellation</li>
+            </ul>
+
+            <h3>Restore Purchases</h3>
+            <p>If you have an active subscription and reinstall the App or create a new account, you can restore your subscription via the <strong>Restore Purchases</strong> option available in the paywall screens and in <strong>Settings &rarr; Subscription</strong>.</p>
+        </div>
+
+        <div class="card">
+            <h2>9. Refund Policy</h2>
+            <p>All purchases are processed through Apple's In-App Purchase system. Refunds are handled by Apple in accordance with Apple's standard refund policies. The Licensor has no obligation to provide refunds directly. To request a refund, visit: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></p>
+        </div>
+
+        <div class="card">
+            <h2>10. Account Deletion</h2>
+            <p>You may delete your account at any time from <strong>Settings &rarr; Account Settings &rarr; Delete Account</strong>. Deletion requires re-authentication for security.</p>
+
+            <p><strong>Upon account deletion, the following is permanently and irreversibly deleted:</strong></p>
+            <ul>
+                <li>All personal financial data: transactions, accounts (bills), categories, budgets, scheduled payments</li>
+                <li>AI chat history, receipts, AI usage records</li>
+                <li>User profile and settings</li>
+                <li>Firebase Authentication record</li>
+                <li>Subscription status record</li>
+            </ul>
+
+            <p><strong>Deletion is immediate. There is no grace period or recovery option.</strong></p>
+            <p><strong>Subscription:</strong> Active subscriptions managed by Apple are not automatically cancelled upon account deletion. You must cancel your subscription separately via <strong>iOS Settings &rarr; Subscriptions</strong>.</p>
+            <p><strong>If you are a member (not owner) of a Family Space:</strong> your membership is removed automatically upon account deletion. Shared data you contributed remains in the Family Space as it belongs to the shared account, not to you individually.</p>
+            <p><strong>If you are the owner of a Family Space:</strong> you must delete the Family Space before deleting your account.</p>
+            <p>After deleting your account, you may create a new account and restore your active subscription via <strong>Restore Purchases</strong>. Previously entered personal data cannot be recovered.</p>
+        </div>
+
+        <div class="card">
+            <h2>11. Receipt Scanning and Bank Statement Import</h2>
+            <p>The App allows you to scan receipts using your device camera or import documents from your photo library or files for AI-assisted parsing.</p>
+
+            <p><strong>Scanning methods:</strong></p>
+            <ul>
+                <li><strong>Camera scan:</strong> captures a document image directly using your device camera (VNDocumentCameraViewController). Requires camera permission.</li>
+                <li><strong>Photo library:</strong> select existing images from your photo library via the system picker.</li>
+                <li><strong>File import:</strong> select PDF, CSV, Excel (XLSX), JPEG, or PNG files via the system file picker.</li>
+            </ul>
+
+            <p>You acknowledge that:</p>
+            <ul>
+                <li>Captured or selected images and documents are transmitted to our servers and processed by Google Vertex AI for data extraction</li>
+                <li>Images and documents are not stored on our servers — only the extracted structured data is saved to your account</li>
+                <li>You should only scan or import documents you are authorized to process</li>
+                <li>The accuracy of AI-extracted data is not guaranteed and should be verified by you before saving</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>12. Intellectual Property</h2>
+            <p>The App, including its design, code, content, and branding, is owned by Oleh Herasymenko and protected by applicable intellectual property laws. You are granted a limited, non-exclusive, non-transferable license to use the App as described in this Agreement.</p>
+            <p>You may not:</p>
+            <ul>
+                <li>Copy, modify, or create derivative works of the App</li>
+                <li>Reverse engineer, decompile, or disassemble the App</li>
+                <li>Remove any proprietary notices or labels</li>
+                <li>Use the App's branding or content without prior written permission</li>
+            </ul>
+        </div>
+
+        <div class="card disclaimer">
+            <h2>13. Disclaimer of Warranties</h2>
+            <p class="uppercase">To the maximum extent permitted by applicable law, the App is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+            <p class="uppercase">Licensor does not warrant that:</p>
+            <ul>
+                <li class="uppercase">The App will meet your requirements</li>
+                <li class="uppercase">The App will operate uninterrupted or error-free</li>
+                <li class="uppercase">Any AI-generated content will be accurate, complete, or suitable for your purposes</li>
+                <li class="uppercase">The App will be free from security vulnerabilities</li>
+            </ul>
+        </div>
+
+        <div class="card disclaimer">
+            <h2>14. Limitation of Liability</h2>
+            <p class="uppercase">To the maximum extent permitted by applicable law, in no event shall Licensor be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+            <ul>
+                <li class="uppercase">Loss of profits or revenues</li>
+                <li class="uppercase">Loss of data</li>
+                <li class="uppercase">Financial losses arising from reliance on AI-generated content or analysis</li>
+                <li class="uppercase">Any decisions made based on information provided by the App or its AI assistant</li>
+            </ul>
+            <p class="uppercase">The Licensor's total liability to you for any claims arising from this Agreement shall not exceed the amount you paid for the App in the twelve (12) months preceding the claim.</p>
+        </div>
+
+        <div class="card">
+            <h2>15. Maintenance and Support</h2>
+            <p>Licensor is solely responsible for providing maintenance and support services for the App. Apple has no obligation to furnish any maintenance or support services with respect to the App.</p>
+            <p>For support, contact: <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a></p>
+        </div>
+
+        <div class="card">
+            <h2>16. Product Claims</h2>
+            <p>Licensor, not Apple, is responsible for addressing any claims relating to the App, including:</p>
+            <ul>
+                <li>Product liability claims</li>
+                <li>Claims that the App fails to conform to any applicable legal or regulatory requirement</li>
+                <li>Claims arising under consumer protection legislation</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>17. Intellectual Property Infringement</h2>
+            <p>In the event of any third-party claim that the App infringes intellectual property rights, Licensor, not Apple, will be solely responsible for the investigation, defense, settlement, and discharge of any such claim.</p>
+        </div>
+
+        <div class="card">
+            <h2>18. Legal Compliance</h2>
+            <p>You represent and warrant that:</p>
+            <ul>
+                <li>You are not located in a country subject to a U.S. Government embargo or designated as a terrorist-supporting country</li>
+                <li>You are not listed on any U.S. Government list of prohibited or restricted parties</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>19. Third-Party Beneficiary</h2>
+            <p>Apple and Apple's subsidiaries are third-party beneficiaries of this Agreement. Upon your acceptance of this Agreement, Apple has the right to enforce this Agreement against you as a third-party beneficiary.</p>
+        </div>
+
+        <div class="card">
+            <h2>20. Governing Law and Dispute Resolution</h2>
+            <p><strong>Governing Law:</strong> This Agreement is governed by the laws of Germany, without regard to conflict of laws principles.</p>
+            <p><strong>For EU users:</strong> In accordance with EU consumer protection law, you may also benefit from the mandatory provisions of the law of the country in which you are resident.</p>
+            <p><strong>Dispute Resolution:</strong> We encourage you to contact us first at <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a> to resolve any disputes informally. If a dispute cannot be resolved informally, it shall be subject to the exclusive jurisdiction of the courts of Germany.</p>
+            <p><strong>EU Online Dispute Resolution:</strong> The European Commission provides an online dispute resolution platform: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a></p>
+        </div>
+
+        <div class="card">
+            <h2>21. Severability</h2>
+            <p>If any provision of this Agreement is found to be invalid, illegal, or unenforceable under applicable law, the remaining provisions will continue in full force and effect. The invalid provision will be modified to the minimum extent necessary to make it enforceable, or severed if modification is not possible.</p>
+        </div>
+
+        <div class="card">
+            <h2>22. Entire Agreement</h2>
+            <p>This Agreement, together with the <a href="privacy.html">Privacy Policy</a>, constitutes the entire agreement between you and Licensor with respect to the App and supersedes all prior agreements, understandings, and communications, whether written or oral, relating to the subject matter hereof.</p>
+        </div>
+
+        <div class="card">
+            <h2>23. Changes to This Agreement</h2>
+            <p>Licensor may modify this Agreement at any time. We will notify you of material changes by posting the updated Agreement within the App and on our support website. The Effective Date at the top will be updated accordingly. Continued use of the App after changes constitutes acceptance of the modified Agreement.</p>
+        </div>
+
+        <div class="card">
+            <h2>24. Contact Information</h2>
+            <p>Oleh Herasymenko<br>
+            Email: <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a></p>
+            <p>Apple Contact: For questions about App Store purchases, contact <a href="https://support.apple.com">Apple Support</a></p>
+        </div>
+
+        <div class="footer">&copy; 2026 Quro. All rights reserved.</div>
+    </div>
+</body>
+</html>
