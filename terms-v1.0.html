@@ -174,7 +174,7 @@
         <a href="index.html" class="back">&larr; Back</a>
 
         <h1>Terms of Use (EULA)</h1>
-        <div class="meta">Effective Date: May 12, 2026 &middot; Version 1.1</div>
+        <div class="meta">Effective Date: March 31, 2026 &middot; Version 1.0</div>
 
         <div class="card">
             <p>This End User License Agreement ("Agreement") is a legal agreement between you and Oleh Herasymenko ("Licensor", "we", "us", or "our") governing your use of the mobile application Quro (the "App"), available on the App Store.</p>
@@ -199,7 +199,7 @@
 
         <div class="card">
             <h2>3. AI-Generated Content Disclaimer</h2>
-            <p>The Service uses Google Vertex AI to provide AI-powered features including receipt scanning, transaction import, and financial chat assistant. You consent to AI processing of your financial data when you tap <strong>Get Started</strong> on the Welcome screen, where this consent is referenced in the legal notice immediately below the button. The Privacy Policy linked there explains exactly which data is sent to Google Vertex AI and for what purpose. You may withdraw your consent at any time in Settings &rarr; AI Features. If you withdraw and later attempt to use an AI feature, the App will display a re-consent prompt explaining what will be processed.</p>
+            <p>The Service uses Google Vertex AI to provide AI-powered features including receipt scanning, transaction import, and financial chat assistant. Before you use AI features for the first time, the App will display a consent screen explaining what data is sent to Google Vertex AI. AI features are only activated after you explicitly confirm your consent. You may withdraw consent at any time in App Settings.</p>
             <p>By using AI features, you acknowledge that your financial data (transaction descriptions, receipt images, document content, category names) is sent to Google Vertex AI for processing. Google processes this data solely to provide the requested service, does not use it for model training, and does not retain it after processing. All AI processing occurs within the EU (europe-west1 region).</p>
             <p>You further acknowledge and agree that:</p>
             <ul>
@@ -210,7 +210,7 @@
                 <li>The Licensor is not liable for any decisions made based on AI-generated content</li>
                 <li>The Licensor is not responsible for any actions taken or not taken based on AI-generated content, including but not limited to incorrect categorization, miscalculation, or erroneous financial analysis</li>
             </ul>
-            <p><strong>AI Usage Limits:</strong> AI features are subject to a fair usage limit. The current limit is displayed within the App. Licensor reserves the right to adjust the limit at any time with reasonable notice.</p>
+            <p><strong>AI Usage Limits:</strong> AI features are subject to fair usage limits that vary by subscription tier. These limits are designed to ensure quality of service for all users. Current limits are displayed within the App. Licensor reserves the right to adjust limits at any time with reasonable notice.</p>
         </div>
 
         <div class="card">
@@ -229,8 +229,7 @@
 
         <div class="card">
             <h2>5. Account Registration and Security</h2>
-            <p><strong>Anonymous onboarding:</strong> To allow you to start onboarding without friction, the App creates a temporary anonymous Firebase account when you tap <strong>Get Started</strong>. Your onboarding answers, generated categories, and budget suggestions are stored under this anonymous identifier. You complete account creation by signing in with Apple or Google at the end of onboarding — at that point the anonymous account is linked to your permanent identity, and the data carries over. If you do not complete sign-in within a reasonable period, the anonymous account and any associated data may be removed.</p>
-            <p>To complete account creation, you must sign in using Sign in with Apple or Google Sign-In. Email and password registration is not supported.</p>
+            <p>To use the App, you must create an account using Sign in with Apple or Google Sign-In. Email and password registration is not supported.</p>
             <p>You are responsible for:</p>
             <ul>
                 <li>Maintaining the confidentiality of your account</li>
@@ -248,7 +247,7 @@
 
         <div class="card">
             <h2>7. Family Space</h2>
-            <p>The App offers a Family Space feature that allows multiple users to share a financial account. Family Space is available to all users at no additional cost. Creating or joining a Family Space does not require a subscription. AI features are licensed per individual user — the owner's Pro subscription does not extend AI access to other Family Space members.</p>
+            <p>The App offers a Family Space feature that allows multiple users to share a financial account. A Family Space requires at least a Family Basic subscription.</p>
             <ul>
                 <li>The Family Space owner is responsible for managing membership and access</li>
                 <li>All members of a Family Space can view shared financial data (transactions, budgets, balances)</li>
@@ -272,24 +271,34 @@
                 <li>Budgets and budget tracking</li>
                 <li>Scheduled recurring payments</li>
                 <li>Currency conversion</li>
-                <li>Family Space (shared financial account with other users)</li>
             </ul>
-            <p>AI-powered features (chat assistant, receipt scanning, bank statement import) require an active Quro Pro subscription.</p>
+            <p>AI-powered features (chat assistant, receipt scanning, bank statement import) require a paid subscription. Family Space requires at least a Family Basic subscription.</p>
 
-            <h3>Subscription</h3>
-            <p>The App offers a single auto-renewable subscription plan via Apple In-App Purchase:</p>
+            <h3>Subscription Tiers</h3>
+            <p>The App offers the following auto-renewable subscription plans via Apple In-App Purchase:</p>
+            <p><strong>Personal Account:</strong></p>
             <ul>
-                <li><strong>Quro Pro</strong> — available as a monthly or yearly plan. The yearly plan is offered at a discount versus the monthly rate (exact discount varies by App Store region).</li>
+                <li>Personal Basic — monthly or yearly</li>
+                <li>Personal Pro — monthly or yearly</li>
             </ul>
-            <p>Pro grants access to AI-powered features (chat assistant, receipt scanning, bank statement import). All other features (manual transaction entry, accounts, categories, budgets, scheduled payments, currency conversion, Family Space) remain free.</p>
-            <p>AI features under Pro are subject to a fair usage limit displayed within the App. Licensor reserves the right to adjust the limit at any time with reasonable notice.</p>
+            <p><strong>Family Space:</strong></p>
+            <ul>
+                <li>Family Basic — monthly or yearly</li>
+                <li>Family Pro — monthly or yearly</li>
+            </ul>
+            <p>AI features within each subscription tier are subject to fair usage limits. Current limits are shown within the App and may be updated with reasonable notice.</p>
 
             <h3>Free Trial</h3>
-            <p>A 7-day free trial is available for new Pro subscribers. Trial eligibility is determined by Apple based on your Apple ID. The trial automatically converts to a paid subscription unless cancelled at least 24 hours before it ends. You will not be charged during the trial period.</p>
+            <p>A free trial is available for new subscribers:</p>
+            <ul>
+                <li>Personal subscription: 7-day free trial</li>
+                <li>Family subscription: 3-day free trial</li>
+            </ul>
+            <p>Your subscription will automatically convert to a paid subscription unless cancelled at least 24 hours before the end of the trial period. You will not be charged during the free trial period.</p>
 
             <h3>Payment Terms</h3>
             <ul>
-                <li>All payments are processed through Apple's In-App Purchase system. Subscription state and entitlement validation are managed via RevenueCat (US-based service); see the Privacy Policy for international transfer safeguards.</li>
+                <li>All payments are processed through Apple's In-App Purchase system via RevenueCat</li>
                 <li>Prices are displayed in your local currency in the App Store</li>
                 <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
                 <li>Apple is not responsible for the App's content or for any claims related to the App</li>
@@ -459,12 +468,6 @@
             Email: <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a><br>
             Support Website: <a href="https://0g3ra.github.io/quro-legal">https://0g3ra.github.io/quro-legal</a></p>
             <p>Apple Contact: For questions about App Store purchases, contact <a href="https://support.apple.com">Apple Support</a></p>
-        </div>
-
-        <div class="card">
-            <h2>26. Changelog</h2>
-            <p><strong>Version 1.1 (2026-05-12)</strong> — Removed legacy Basic and Family subscription tiers (only unified Pro plan remains). Family Space is now available to all users at no cost. AI features access is per-individual-user (not per-family). AI consent is now given via Welcome screen acceptance, not via a separate first-use prompt. Added documentation of temporary anonymous Firebase authentication during onboarding.</p>
-            <p><strong>Version 1.0 (2026-03-31)</strong> — Initial release.</p>
         </div>
 
         <div class="footer">&copy; 2026 Quro. All rights reserved.</div>

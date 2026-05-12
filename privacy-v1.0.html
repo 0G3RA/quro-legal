@@ -184,7 +184,7 @@
         <a href="index.html" class="back">&larr; Back</a>
 
         <h1>Privacy Policy</h1>
-        <div class="meta">Effective Date: May 12, 2026 &middot; Version 1.1</div>
+        <div class="meta">Effective Date: March 31, 2026 &middot; Version 1.0</div>
 
         <div class="card">
             <p>This Privacy Policy ("Policy") describes how Oleh Herasymenko ("we", "us", or "our") collects, uses, and protects your personal information when you use the mobile application Quro (the "App").</p>
@@ -230,8 +230,7 @@
 
             <h3>Information You Provide</h3>
             <ul>
-                <li><strong>Anonymous account data:</strong> when you tap <strong>Get Started</strong> on the Welcome screen, before signing in, we create a temporary anonymous Firebase user identifier. Your onboarding answers (income range, spending categories, savings goals), AI-generated categories and budget suggestions, and any data you enter during onboarding are stored in Cloud Firestore under this anonymous identifier. If you do not complete sign-in within a reasonable period, the anonymous account and any associated data may be removed.</li>
-                <li><strong>Permanent account data:</strong> collected when you complete account creation via Sign in with Apple or Google Sign-In at the end of onboarding. We collect: display name (from your Apple or Google profile, optional), profile photo URL (from your Apple or Google profile, optional), and email address (stored in Firebase Authentication only, not in our main database). At sign-in, the anonymous account is linked to your permanent account and all anonymous-period data is migrated to your linked identity.</li>
+                <li><strong>Account data:</strong> collected upon registration via Sign in with Apple or Google Sign-In. We collect: display name (from your Apple or Google profile, optional), profile photo URL (from your Apple or Google profile, optional), and email address (stored in Firebase Authentication only, not in our main database)</li>
                 <li><strong>Financial data:</strong> transaction amounts, currencies, categories, comments, dates, and tags entered manually or imported by you</li>
                 <li><strong>Budget and goal data:</strong> budget limits, savings goals, and scheduled recurring transactions</li>
                 <li><strong>Receipt and bank statement content:</strong> image and document data from files you choose to scan or import (see Section 6a)</li>
@@ -331,8 +330,7 @@
             <p>To provide AI-powered features (financial chat assistant, receipt scanning, bank statement import), we send certain data to Google Vertex AI.</p>
             <p>AI features are powered by Google Vertex AI (Gemini models). All AI processing occurs within the European Union (europe-west1 region). Google does not use your data to train or improve its models. Data is processed in accordance with Google Cloud's Data Processing Addendum and is not retained by Google after processing.</p>
 
-            <p><strong>Consent:</strong> You consent to AI processing of your financial data when you tap <strong>Get Started</strong> on the Welcome screen. The legal notice immediately below the <strong>Get Started</strong> button references this Privacy Policy, which sets out exactly which data is sent to Google Vertex AI and for what purpose. This consent covers all AI features used during onboarding (initial category and budget personalisation) and all post-onboarding AI features (chat assistant, receipt scanning, bank statement import).</p>
-            <p>You may withdraw your consent at any time in <strong>Settings &rarr; AI Features</strong>. Withdrawing consent disables all AI features while all other App functionality remains available. If you withdraw consent and later attempt to use an AI feature, the App displays a re-consent prompt explaining what data will be processed before that feature is re-enabled.</p>
+            <p><strong>Consent:</strong> Before you use AI features for the first time, the App displays a consent screen clearly explaining what data will be sent to Google Vertex AI and for what purpose. AI features are only activated after you explicitly confirm your consent. You may withdraw this consent at any time in App Settings, which will disable AI features while all other App functionality remains available.</p>
 
             <h3>Data we send to Google Vertex AI</h3>
             <p><strong>For receipt and bank statement scanning:</strong></p>
@@ -359,7 +357,7 @@
             </ul>
 
             <p><strong>Privacy masking:</strong> In Family Space, other members' individual data is masked before being sent to AI.</p>
-            <p><strong>AI features are optional.</strong> The free tier provides full access to manual transaction entry, budgets, accounts, scheduled payments, and Family Space without using AI. AI features (chat assistant, receipt scanning, bank statement import) require an active <strong>Quro Pro</strong> subscription. AI access is licensed per individual user — Pro is not extended to other Family Space members through the owner's subscription.</p>
+            <p><strong>AI features are optional.</strong> The free tier provides full access to manual transaction entry, budgets, accounts, and scheduled payments without using AI. AI features (chat assistant, receipt scanning, bank statement import) require a paid subscription.</p>
         </div>
 
         <div class="card">
@@ -458,7 +456,6 @@
             <h2>12a. Automated Decision-Making (Art. 22 GDPR)</h2>
             <p>The App uses AI for automated processing such as transaction categorization, receipt parsing, and financial analysis. These features assist you in organizing your financial data.</p>
             <p>No decisions with legal or similarly significant effects are made solely by automated means. All AI-generated categorizations and suggestions can be reviewed, edited, or rejected by you before saving.</p>
-            <p>During onboarding, the App generates an initial set of categories and budget suggestions automatically using AI. These suggestions are presented to you for review on the Plan Preview screen before any data is committed to your account, and you may edit, replace, or delete them at any point afterwards. No suggestions are applied to your account without your explicit acceptance via the &laquo;Looks Good&raquo; action on the Plan Preview screen.</p>
         </div>
 
         <div class="card">
@@ -480,12 +477,6 @@
             Friedrichshafen, Germany<br>
             Email: <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a><br>
             Support Website: <a href="https://0g3ra.github.io/quro-legal">https://0g3ra.github.io/quro-legal</a></p>
-        </div>
-
-        <div class="card">
-            <h2>16. Changelog</h2>
-            <p><strong>Version 1.1 (2026-05-12)</strong> — Removed legacy Basic and Family subscription tiers (only unified Pro plan remains). Family Space is now available to all users at no cost. AI features access is per-individual-user (not per-family). AI consent is now given via Welcome screen acceptance, not via a separate first-use prompt. Added documentation of temporary anonymous Firebase authentication during onboarding.</p>
-            <p><strong>Version 1.0 (2026-03-31)</strong> — Initial release.</p>
         </div>
 
         <div class="footer">&copy; 2026 Quro. All rights reserved.</div>
