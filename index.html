@@ -1199,7 +1199,7 @@
         var params = new URLSearchParams(window.location.search);
         var ct = params.get('ct') || params.get('utm_campaign');
         if (ct) {
-          ct = ct.replace(/[^A-Za-z0-9_\-]/g, '_').slice(0, 255);
+          ct = ct.replace(/[^A-Za-z0-9_\-]/g, '_').slice(0, 40);
           document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
             try {
               var u = new URL(a.href);
