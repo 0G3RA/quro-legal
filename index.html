@@ -1,146 +1,1274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quro — Legal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #F5F5F7;
-            --surface: #FFFFFF;
-            --text: #1C1C2E;
-            --text2: #3C3C50;
-            --text3: #6E6E82;
-            --purple: #6C5CE7;
-            --purpleSoft: rgba(108,92,231, 0.06);
-            --purpleGlow: rgba(108,92,231, 0.10);
-            --border: rgba(0,0,0, 0.06);
-            --border2: rgba(0,0,0, 0.10);
-            --sh2: 0 2px 8px rgba(0,0,0, 0.05);
-            --radius-lg: 20px;
-            --radius-md: 16px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Quro — Финансовый покой в одном приложении</title>
+  <meta name="description" content="Личные финансы с AI: считай расходы, веди бюджет, копи на цели. Для тебя и для семьи. iOS 18.5+" />
+  <meta name="theme-color" content="#0a0a14" />
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #101014;
-                --surface: #1A1A24;
-                --text: #EEEEF2;
-                --text2: #C8C8D4;
-                --text3: #9090A4;
-                --purple: #A78BFA;
-                --purpleSoft: rgba(167,139,250, 0.12);
-                --purpleGlow: rgba(167,139,250, 0.15);
-                --border: rgba(255,255,255, 0.08);
-                --border2: rgba(255,255,255, 0.12);
-                --sh2: 0 2px 8px rgba(0,0,0, 0.30);
-            }
-        }
+  <meta property="og:title" content="Quro — Финансовый покой" />
+  <meta property="og:description" content="AI-помощник по личным финансам. Считай расходы, веди бюджет, копи на цели. Для тебя и для семьи." />
+  <meta property="og:image" content="assets/icon.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        .container {
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
+  <style>
+    /* ============ TOKENS ============ */
+    :root {
+      --bg:            #0a0a14;
+      --bg-elev:       #14141f;
+      --text:          #ffffff;
+      --text-muted:    rgba(255, 255, 255, 0.75);
+      --text-dim:      rgba(255, 255, 255, 0.55);
+      --border:        rgba(255, 255, 255, 0.08);
 
-        .logo-text {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--purple);
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
+      --purple:        #B7A3F0;
+      --purple-deep:   #5247CC;
+      --blue:          #7DD3FC;
+      --cream:         #F5EDD8;
+      --maxw:          1200px;
+    }
 
-        .subtitle {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text3);
-            margin-bottom: 40px;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
 
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    .display {
+      font-family: 'Bricolage Grotesque', 'Manrope', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 0.98;
+      font-variation-settings: 'opsz' 96;
+    }
 
-        .links a {
-            display: block;
-            padding: 18px 24px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            box-shadow: var(--sh2);
-            text-decoration: none;
-            color: var(--text);
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
+    /* ============ NAV ============ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 20, 0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    .brand-name {
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
 
-        .links a:hover {
-            border-color: var(--purple);
-            background: var(--purpleSoft);
-            box-shadow: 0 0 0 3px var(--purpleGlow);
-        }
+    /* ============ STORE BUTTON ============ */
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      background: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: transform 0.25s cubic-bezier(.2,.7,.3,1), box-shadow 0.25s ease;
+      white-space: nowrap;
+    }
+    .btn-store:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 36px rgba(255, 255, 255, 0.2);
+    }
+    .btn-store svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    .btn-store-lg {
+      padding: 18px 32px;
+      font-size: 16px;
+    }
+    .btn-store-lg svg { width: 22px; height: 22px; }
 
-        .links a span {
-            display: block;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text3);
-            margin-top: 4px;
-        }
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      padding: 96px 24px 56px;
+      text-align: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 55% at 50% 25%, rgba(183, 163, 240, 0.35), transparent 65%);
+      z-index: -1;
+      animation: glowPulse 8s ease-in-out infinite;
+    }
+    .hero-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(183, 163, 240, 0.4);
+      margin: 0 auto 32px;
+      animation: heroIn 0.8s 0.1s cubic-bezier(.2,.7,.3,1) both;
+    }
+    .hero-title {
+      font-size: clamp(48px, 9vw, 96px);
+      max-width: 14ch;
+      margin: 0 auto 22px;
+      animation: heroIn 0.8s 0.25s cubic-bezier(.2,.7,.3,1) both;
+    }
+    .hero-title .accent { color: var(--purple); }
+    .hero-sub {
+      font-size: clamp(17px, 2vw, 21px);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.45;
+      animation: heroIn 0.8s 0.4s cubic-bezier(.2,.7,.3,1) both;
+    }
+    .hero-cta {
+      animation: heroIn 0.8s 0.55s cubic-bezier(.2,.7,.3,1) both;
+    }
+    .hero-note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-dim);
+      animation: heroIn 0.8s 0.65s cubic-bezier(.2,.7,.3,1) both;
+    }
+    .hero-mockup-wrap {
+      max-width: min(340px, 80vw);
+      margin: 64px auto 0;
+      animation: heroIn 1s 0.7s cubic-bezier(.2,.7,.3,1) both;
+    }
+    .hero-mockup {
+      filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.6)) drop-shadow(0 12px 30px rgba(183, 163, 240, 0.2));
+      animation: float 7s ease-in-out infinite;
+    }
 
-        .footer {
-            margin-top: 48px;
-            font-size: 12px;
-            color: var(--text3);
-        }
-    </style>
+    /* ============ FEATURE BASE ============ */
+    .feature {
+      position: relative;
+      padding: 104px 24px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .feature-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: grid;
+      gap: 60px;
+      align-items: center;
+    }
+    @media (min-width: 960px) {
+      .feature-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 88px;
+      }
+      .feature.reverse .feature-content { order: 2; }
+    }
+
+    .feature-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.95);
+    }
+    .feature-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    .feature-title {
+      font-size: clamp(38px, 6vw, 60px);
+      margin-bottom: 20px;
+    }
+    .feature-title .accent { display: block; }
+
+    .feature-sub {
+      font-size: clamp(15px, 1.5vw, 18px);
+      color: var(--text-muted);
+      max-width: 480px;
+      line-height: 1.55;
+    }
+    .feature-tag {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Visual single */
+    .feature-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .feature-visual > img {
+      max-width: min(320px, 75vw);
+      filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.45));
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Visual dual (two phones) */
+    .feature-visual.dual {
+      position: relative;
+      width: 100%;
+      min-height: 560px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .phone-slot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    .phone-slot img {
+      max-width: min(260px, 60vw);
+      filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+      animation: float 6s ease-in-out infinite;
+    }
+    .phone-slot-1 {
+      transform: translate(-72%, -50%) rotate(-7deg);
+      z-index: 1;
+    }
+    .phone-slot-1 img { animation-delay: -1s; }
+    .phone-slot-2 {
+      transform: translate(-28%, -50%) rotate(5deg);
+      z-index: 2;
+    }
+    .phone-slot-2 img { animation-delay: -3.5s; }
+
+    @media (max-width: 540px) {
+      .feature-visual.dual { min-height: 480px; }
+      .phone-slot img { max-width: 215px; }
+    }
+
+    /* ============ THEMES (per App Store card) ============ */
+    .theme-ai {
+      background: linear-gradient(135deg, #4F44C9 0%, #6B4EE5 55%, #7E5BFF 100%);
+    }
+    .theme-ai .feature-badge { background: rgba(0, 0, 0, 0.22); }
+    .theme-ai .feature-title .accent { color: var(--blue); }
+    .theme-ai .feature-sub { color: rgba(255, 255, 255, 0.88); }
+
+    .theme-scanner {
+      background: linear-gradient(160deg, #1FB686 0%, #28C68F 100%);
+    }
+    .theme-scanner .feature-badge { background: rgba(0, 0, 0, 0.18); color: rgba(255, 255, 255, 0.95); }
+    .theme-scanner .feature-title { color: #ffffff; }
+    .theme-scanner .feature-title .accent { color: var(--cream); }
+    .theme-scanner .feature-sub { color: rgba(255, 255, 255, 0.92); }
+
+    .theme-family {
+      background: linear-gradient(160deg, #DC4A78 0%, #ED6694 100%);
+    }
+    .theme-family .feature-badge { background: rgba(0, 0, 0, 0.18); color: rgba(255, 255, 255, 0.95); }
+    .theme-family .feature-title .accent { color: #4A0E22; }
+    .theme-family .feature-sub { color: rgba(255, 255, 255, 0.92); }
+    .theme-family .feature-tag {
+      background: rgba(0, 0, 0, 0.22);
+      color: #fff;
+    }
+
+    .theme-budgets {
+      background: #060816;
+    }
+    .theme-budgets::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 35%, rgba(125, 211, 252, 0.22), transparent 70%);
+      z-index: -1;
+      animation: glowPulse 10s ease-in-out infinite;
+    }
+    .theme-budgets .feature-badge { color: var(--blue); }
+    .theme-budgets .feature-title .accent { color: var(--blue); }
+
+    .theme-goals {
+      background: #0a0a14;
+    }
+    .theme-goals::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255, 197, 88, 0.16), transparent 70%);
+      z-index: -1;
+      animation: glowPulse 12s ease-in-out infinite;
+    }
+    .theme-goals .feature-badge { color: #FFC558; }
+    .theme-goals .feature-title .accent { color: #FFC558; }
+
+    /* ============ TRUST SECTION ============ */
+    .trust {
+      position: relative;
+      padding: 104px 24px;
+      background: var(--bg);
+      isolation: isolate;
+    }
+    .trust::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(183, 163, 240, 0.12), transparent 70%);
+      z-index: -1;
+    }
+    .trust-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .trust-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .trust-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--purple);
+    }
+    .trust-title {
+      font-size: clamp(36px, 5.5vw, 56px);
+      max-width: 18ch;
+      margin: 0 auto 56px;
+    }
+    .trust-title .accent { color: var(--purple); }
+    .trust-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .trust-card {
+      background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .trust-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(183, 163, 240, 0.3);
+    }
+    .trust-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(183, 163, 240, 0.12);
+      border-radius: 12px;
+      margin-bottom: 18px;
+      color: var(--purple);
+    }
+    .trust-icon svg { width: 22px; height: 22px; }
+    .trust-card h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .trust-card p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ============ PRICING ============ */
+    .pricing {
+      position: relative;
+      padding: 104px 24px;
+      background: var(--bg);
+      isolation: isolate;
+    }
+    .pricing::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(183, 163, 240, 0.18), transparent 70%);
+      z-index: -1;
+    }
+    .pricing-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pricing-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .pricing-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--purple);
+    }
+    .pricing-title {
+      font-size: clamp(36px, 5.5vw, 56px);
+      max-width: 18ch;
+      margin: 0 auto 56px;
+    }
+    .pricing-title .accent { color: var(--purple); }
+    .pricing-grid {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: 1fr;
+      text-align: left;
+    }
+    @media (min-width: 720px) {
+      .pricing-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+    }
+    .plan {
+      background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .plan:hover { transform: translateY(-3px); }
+    .plan-featured {
+      border-color: rgba(183, 163, 240, 0.4);
+      background: linear-gradient(165deg, rgba(183, 163, 240, 0.14), rgba(183, 163, 240, 0.02));
+      box-shadow: 0 30px 80px rgba(183, 163, 240, 0.18);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--purple);
+      color: #1a1530;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .plan-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .plan-price {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: 48px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .plan-price .currency { font-size: 28px; vertical-align: top; margin-right: 2px; }
+    .plan-price .period { font-size: 16px; color: var(--text-dim); font-weight: 500; }
+    .plan-note {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+    }
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 15px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    .plan-features li:first-child { border-top: 0; }
+    .plan-features li svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--purple);
+    }
+
+    /* ============ CHANGELOG ============ */
+    .changelog {
+      position: relative;
+      padding: 88px 24px 96px;
+      background: var(--bg);
+    }
+    .changelog-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .changelog-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .changelog-version {
+      display: inline-block;
+      background: rgba(183, 163, 240, 0.15);
+      color: var(--purple);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .changelog-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4.2vw, 38px);
+      letter-spacing: -0.03em;
+    }
+    .changelog-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--border);
+    }
+    .changelog-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .changelog-list .icon-wrap {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: rgba(183, 163, 240, 0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--purple);
+    }
+    .changelog-list .icon-wrap svg { width: 16px; height: 16px; }
+    .changelog-list h4 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.015em;
+      margin-bottom: 4px;
+    }
+    .changelog-list p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ============ FINAL CTA ============ */
+    .final {
+      position: relative;
+      padding: 130px 24px;
+      text-align: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 65% 55% at 50% 50%, rgba(183, 163, 240, 0.35), transparent 70%);
+      z-index: -1;
+      animation: glowPulse 8s ease-in-out infinite;
+    }
+    .final-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      margin: 0 auto 28px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(183, 163, 240, 0.4);
+    }
+    .final-title {
+      font-size: clamp(44px, 8vw, 80px);
+      margin-bottom: 22px;
+    }
+    .final-title .accent { color: var(--purple); }
+    .final-sub {
+      font-size: clamp(16px, 1.7vw, 19px);
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.5;
+    }
+    .final-meta {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 24px;
+    }
+    .footer-content {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .footer-brand img {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .footer-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* ============ ANIMATIONS ============ */
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50%      { opacity: 1;    transform: scale(1.06); }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s cubic-bezier(.2,.7,.3,1), transform 0.9s cubic-bezier(.2,.7,.3,1);
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(.2,.7,.3,1), transform 0.7s cubic-bezier(.2,.7,.3,1);
+    }
+    .reveal-stagger.in-view > *:nth-child(1) { transition-delay: 0.05s; }
+    .reveal-stagger.in-view > *:nth-child(2) { transition-delay: 0.15s; }
+    .reveal-stagger.in-view > *:nth-child(3) { transition-delay: 0.25s; }
+    .reveal-stagger.in-view > *:nth-child(4) { transition-delay: 0.35s; }
+    .reveal-stagger.in-view > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001s !important;
+      }
+      .reveal, .reveal-stagger > * { opacity: 1; transform: none; }
+    }
+
+    /* ============ COOKIE CONSENT BANNER ============ */
+    .cookie-banner {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 200;
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(20, 20, 31, 0.92);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 18px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      transform: translateY(140%);
+      transition: transform 0.5s cubic-bezier(.2,.7,.3,1);
+    }
+    .cookie-banner.visible { transform: translateY(0); }
+    .cookie-text {
+      flex: 1 1 280px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .cookie-text a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .cookie-actions {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .btn-cookie {
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      font-family: inherit;
+      white-space: nowrap;
+      transition: opacity 0.2s, background 0.2s, transform 0.2s;
+    }
+    .btn-cookie:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-cookie.primary {
+      background: var(--text);
+      color: #000;
+      border-color: var(--text);
+    }
+    @media (max-width: 540px) {
+      .cookie-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+      }
+      .cookie-actions { width: 100%; }
+      .btn-cookie { flex: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cookie-banner { transition: opacity 0.15s linear; transform: none; opacity: 0; pointer-events: none; }
+      .cookie-banner.visible { opacity: 1; pointer-events: auto; }
+    }
+
+    /* ============ RESPONSIVE TUNING ============ */
+    @media (max-width: 720px) {
+      .feature { padding: 80px 24px; }
+      .hero { padding: 64px 24px 32px; }
+      .hero-icon { width: 84px; height: 84px; margin-bottom: 26px; }
+      .hero-mockup-wrap { margin-top: 48px; }
+      .feature-badge { margin-bottom: 20px; }
+      .trust { padding: 80px 24px; }
+      .final { padding: 96px 24px; }
+      .footer-content { justify-content: center; text-align: center; }
+    }
+    @media (max-width: 420px) {
+      .nav-inner { padding: 12px 18px; }
+      .brand-name { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo-text">Quro</div>
-        <div class="subtitle">Legal Information</div>
-        <div class="links">
-            <a href="privacy.html">
-                Privacy Policy
-                <span>How we handle your data</span>
-            </a>
-            <a href="terms.html">
-                Terms of Use
-                <span>End User License Agreement</span>
-            </a>
-            <a href="impressum.html">
-                Impressum
-                <span>Legal notice (TMG &sect; 5)</span>
-            </a>
-        </div>
-        <div class="footer">
-            Questions? Contact us: <a href="mailto:thevaltorna@gmail.com" style="color: var(--purple);">thevaltorna@gmail.com</a>
-            <br><br>&copy; 2026 Quro. All rights reserved.
-        </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="brand" aria-label="Quro">
+        <img src="assets/icon.png" alt="" />
+        <span class="brand-name">Quro</span>
+      </a>
+      <a href="https://apps.apple.com/app/id6760856559" class="btn-store" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM275.4 78.4c20.9-24.8 19-47.3 18.4-55.4-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.9 20 1.5 38.3-8.8 53.3-26.3z"/></svg>
+        Скачать
+      </a>
     </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <img src="assets/icon.png" alt="Quro" class="hero-icon" />
+    <h1 class="display hero-title">
+      Финансовый <span class="accent">покой.</span>
+    </h1>
+    <p class="hero-sub">
+      AI-ассистент по личным финансам, который понимает обычный язык. Спрашивай о тратах, добавляй покупки одной фразой — без таблиц и Excel.
+    </p>
+    <div class="hero-cta">
+      <a href="https://apps.apple.com/app/id6760856559" class="btn-store btn-store-lg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM275.4 78.4c20.9-24.8 19-47.3 18.4-55.4-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.9 20 1.5 38.3-8.8 53.3-26.3z"/></svg>
+        Загрузить в App Store
+      </a>
+    </div>
+    <p class="hero-note">Бесплатно. Без рекламы. iOS 18.5+</p>
+    <div class="hero-mockup-wrap">
+      <img src="assets/dashboard.png" alt="Quro: главный экран" class="hero-mockup" />
+    </div>
+  </header>
+
+  <!-- ============ AI CHAT ============ -->
+  <section class="feature theme-ai">
+    <div class="feature-inner">
+      <div class="feature-content reveal reveal-stagger">
+        <span class="feature-badge">AI ассистент</span>
+        <h2 class="display feature-title">
+          Просто спроси.
+          <span class="accent">Quro ответит.</span>
+        </h2>
+        <p class="feature-sub">
+          «Сколько я потратил на еду в марте?» или «Добавь обед, €12, кафе» — Quro понимает и вопросы, и команды. Говори с приложением, как с финансовым советником. Без полей форм и категорий вручную.
+        </p>
+      </div>
+      <div class="feature-visual reveal">
+        <img src="assets/chat.png" alt="AI ассистент в чате" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCANNER ============ -->
+  <section class="feature theme-scanner reverse">
+    <div class="feature-inner">
+      <div class="feature-content reveal reveal-stagger">
+        <span class="feature-badge">Сканер чеков</span>
+        <h2 class="display feature-title">
+          Сфоткай чек.
+          <span class="accent">3 секунды.</span>
+        </h2>
+        <p class="feature-sub">
+          Один снимок — десятки позиций уже разложены по категориям. Кофе отдельно, продукты отдельно, бытовая химия отдельно. Без ручного ввода. Quro даже подскажет, если такой чек уже был — чтобы не задублировать.
+        </p>
+      </div>
+      <div class="feature-visual dual reveal">
+        <div class="phone-slot phone-slot-1">
+          <img src="assets/receipt-preview.png" alt="Превью чека" />
+        </div>
+        <div class="phone-slot phone-slot-2">
+          <img src="assets/receipt-saved.png" alt="Чек сохранён" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUDGETS ============ -->
+  <section class="feature theme-budgets">
+    <div class="feature-inner">
+      <div class="feature-content reveal reveal-stagger">
+        <span class="feature-badge">Умные бюджеты</span>
+        <h2 class="display feature-title">
+          Знай остаток.
+          <span class="accent">Каждый день.</span>
+        </h2>
+        <p class="feature-sub">
+          Месячные бюджеты по любым категориям с прогрессом в реальном времени. Quro предупредит, когда подходишь к лимиту — а не постфактум, когда уже всё потрачено.
+        </p>
+      </div>
+      <div class="feature-visual reveal">
+        <img src="assets/budgets.png" alt="Бюджеты по категориям" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GOALS ============ -->
+  <section class="feature theme-goals reverse">
+    <div class="feature-inner">
+      <div class="feature-content reveal reveal-stagger">
+        <span class="feature-badge">Цели и накопления</span>
+        <h2 class="display feature-title">
+          Копи на цели.
+          <span class="accent">С прогнозом.</span>
+        </h2>
+        <p class="feature-sub">
+          Финансовые цели с умным прогнозом достижения. Видно, сколько уже накопил, средний темп откладывания и когда дойдёшь до цели при текущем ритме. Без иллюзий и без давления.
+        </p>
+      </div>
+      <div class="feature-visual reveal">
+        <img src="assets/goal.png" alt="Финансовая цель" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAMILY ============ -->
+  <section class="feature theme-family">
+    <div class="feature-inner">
+      <div class="feature-content reveal reveal-stagger">
+        <span class="feature-badge">Семейное пространство</span>
+        <h2 class="display feature-title">
+          Веди деньги
+          <span class="accent">как семья.</span>
+        </h2>
+        <p class="feature-sub">
+          Общий бюджет, отдельные логины. Видно, кто что потратил — без скриншотов и лишних разборок. Каждый продолжает пользоваться своими банками и счетами.
+        </p>
+        <span class="feature-tag">Семейное пространство — бесплатно</span>
+      </div>
+      <div class="feature-visual dual reveal">
+        <div class="phone-slot phone-slot-1">
+          <img src="assets/family-view.png" alt="Семейная транзакция" />
+        </div>
+        <div class="phone-slot phone-slot-2">
+          <img src="assets/family-create.png" alt="Создание транзакции" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST: currencies / import / privacy ============ -->
+  <section class="trust">
+    <div class="trust-inner">
+      <div class="reveal reveal-stagger" style="text-align:center;">
+        <span class="trust-eyebrow">Под капотом</span>
+        <h2 class="display trust-title">
+          Сделано <span class="accent">для жизни</span> в нескольких странах.
+        </h2>
+      </div>
+      <div class="trust-grid reveal reveal-stagger">
+        <div class="trust-card">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Мультивалютность</h3>
+          <p>Банковские карты, наличные, накопления — всё в одном месте. Валюты разных стран в одном балансе. Для тех, кто живёт и тратит за рубежом.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <h3>Импорт без интеграций</h3>
+          <p>Загружай банковские данные через скриншоты или CSV. Без сложных банковских подключений — простой и приватный способ всё учитывать.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Privacy в основе</h3>
+          <p>Твои финансовые данные — твои. Никакой рекламы. Никакой продажи данных. Quro — нативное iOS-приложение, а не очередной сервис подписок на твою жизнь.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing">
+    <div class="pricing-inner">
+      <div class="reveal reveal-stagger">
+        <span class="pricing-eyebrow">Цена</span>
+        <h2 class="display pricing-title">
+          Бесплатно — навсегда. <span class="accent">Pro — по подписке.</span>
+        </h2>
+      </div>
+      <div class="pricing-grid reveal reveal-stagger">
+        <div class="plan">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">€0<span class="period"> / навсегда</span></div>
+          <p class="plan-note">Полноценный учёт без AI-функций.</p>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Учёт доходов и расходов</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Счета, карты и валюты</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Месячные бюджеты по категориям</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Цели накопления с прогнозом</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Семейное пространство</li>
+          </ul>
+        </div>
+        <div class="plan plan-featured">
+          <span class="plan-badge">Все возможности</span>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price"><span class="currency">€</span>9.99<span class="period"> / мес</span></div>
+          <p class="plan-note">или €99.99 в год. 7 дней пробного периода.</p>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Всё из Free</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>AI-чат: вопросы и команды на обычном языке</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Сканер чеков с авторазделением по категориям</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Импорт банковских выписок (CSV)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Pro работает в личном и семейном пространствах</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHANGELOG ============ -->
+  <section class="changelog">
+    <div class="changelog-inner reveal reveal-stagger">
+      <div class="changelog-head">
+        <span class="changelog-version">v1.1.0</span>
+        <h3 class="changelog-title">Что нового</h3>
+      </div>
+      <ul class="changelog-list">
+        <li>
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          </div>
+          <div>
+            <h4>Персонализированный onboarding</h4>
+            <p>Quro использует AI, чтобы подобрать стартовые категории, бюджеты и цели на основе короткой анкеты при первом запуске.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div>
+            <h4>Один тариф Pro вместо нескольких</h4>
+            <p>Раньше было несколько тарифов. Теперь все платные функции — AI-чат, сканер чеков и импорт выписок — собраны в одном плане Pro.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Семейное пространство — бесплатно</h4>
+            <p>Делиться финансовым пространством с другим пользователем больше не требует платной подписки.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <h4>Pro работает везде</h4>
+            <p>Подписка теперь привязана к пользователю, а не к пространству. AI-функции доступны и в личном, и в семейном пространстве.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="reveal reveal-stagger">
+      <img src="assets/icon.png" alt="Quro" class="final-icon" />
+      <h2 class="display final-title">
+        Готов?<br>
+        <span class="accent">Бесплатно.</span>
+      </h2>
+      <p class="final-sub">
+        Базовый план — навсегда. AI-чат, сканер чеков и импорт банковских выписок открываются по подписке Pro. Семейное пространство — бесплатно для всех.
+      </p>
+      <a href="https://apps.apple.com/app/id6760856559" class="btn-store btn-store-lg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM275.4 78.4c20.9-24.8 19-47.3 18.4-55.4-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.9 20 1.5 38.3-8.8 53.3-26.3z"/></svg>
+        Загрузить в App Store
+      </a>
+      <p class="final-meta">iOS 18.5 и новее</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/icon.png" alt="" />
+        <span>Quro by Swarum</span>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html" target="_blank" rel="noopener">Privacy</a>
+        <a href="terms.html" target="_blank" rel="noopener">Terms</a>
+        <a href="impressum.html" target="_blank" rel="noopener">Impressum</a>
+        <a href="#" id="cookie-settings-link">Cookies</a>
+      </div>
+      <div class="footer-copy">© 2026 Swarum</div>
+    </div>
+  </footer>
+
+  <!-- ============ SCROLL-REVEAL JS ============ -->
+  <script>
+    (function () {
+      if (typeof IntersectionObserver === 'undefined') {
+        // Fallback: just reveal everything immediately
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    })();
+  </script>
+  <!-- ============ COOKIE CONSENT BANNER ============ -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="cookie-text">
+      Мы используем маркетинговые cookies (Meta Pixel) для оценки эффективности рекламы. Подробнее — в <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+    </div>
+    <div class="cookie-actions">
+      <button class="btn-cookie" id="cookie-decline" type="button">Отказаться</button>
+      <button class="btn-cookie primary" id="cookie-accept" type="button">Принять</button>
+    </div>
+  </div>
+
+  <!-- ============ CONSENT-GATED META PIXEL + BANNER LOGIC ============ -->
+  <script>
+    (function () {
+      var STORAGE_KEY = 'quro_consent';
+      var PIXEL_ID = '2924338261231464';
+      var pixelLoaded = false;
+
+      function loadPixel() {
+        if (pixelLoaded) return;
+        pixelLoaded = true;
+        // Meta Pixel base — loaded only after user grants consent
+        !function(f,b,e,v,n,t,s){
+          if(f.fbq)return;
+          n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+          t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        // Meta Consent Mode v2
+        fbq('consent', 'grant');
+        fbq('init', PIXEL_ID);
+        fbq('track', 'PageView');
+      }
+
+      var banner   = document.getElementById('cookie-banner');
+      var accept   = document.getElementById('cookie-accept');
+      var decline  = document.getElementById('cookie-decline');
+      var settings = document.getElementById('cookie-settings-link');
+
+      function showBanner() {
+        // Defer to next frame so transition fires
+        requestAnimationFrame(function () { banner.classList.add('visible'); });
+      }
+      function hideBanner() {
+        banner.classList.remove('visible');
+      }
+
+      accept.addEventListener('click', function () {
+        try { localStorage.setItem(STORAGE_KEY, 'granted'); } catch (e) {}
+        hideBanner();
+        loadPixel();
+      });
+      decline.addEventListener('click', function () {
+        try { localStorage.setItem(STORAGE_KEY, 'denied'); } catch (e) {}
+        hideBanner();
+        // Pixel is NOT loaded. Nothing tracked.
+      });
+
+      // Footer "Cookies" link re-opens the banner so users can change their mind
+      if (settings) {
+        settings.addEventListener('click', function (e) {
+          e.preventDefault();
+          try { localStorage.removeItem(STORAGE_KEY); } catch (e2) {}
+          showBanner();
+        });
+      }
+
+      // Initial decision on page load
+      var stored = null;
+      try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      if (stored === 'granted') {
+        loadPixel();
+      } else if (stored !== 'denied') {
+        // No decision yet — show banner after a short delay so hero animation lands first
+        setTimeout(showBanner, 700);
+      }
+    })();
+  </script>
+
 </body>
 </html>

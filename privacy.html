@@ -184,7 +184,7 @@
         <a href="index.html" class="back">&larr; Back</a>
 
         <h1>Privacy Policy</h1>
-        <div class="meta">Effective Date: May 12, 2026 &middot; Version 1.1</div>
+        <div class="meta">Effective Date: May 15, 2026 &middot; Version 1.2</div>
 
         <div class="card">
             <p>This Privacy Policy ("Policy") describes how Oleh Herasymenko ("we", "us", or "our") collects, uses, and protects your personal information when you use the mobile application Quro (the "App").</p>
@@ -286,7 +286,7 @@
             <p>We process your personal data based on the following legal grounds:</p>
             <ul>
                 <li><strong>Performance of a contract</strong> — providing access to the App and its features</li>
-                <li><strong>Your consent</strong> — when you enable camera access, AI features, or push notifications</li>
+                <li><strong>Your consent</strong> (Art. 6(1)(a) GDPR) — when you enable camera access, AI features, push notifications, or accept marketing cookies (Meta Pixel) on our website (see Section 6c)</li>
                 <li><strong>Legitimate interests</strong> — improving the App through anonymized analytics, diagnosing crashes, ensuring security</li>
                 <li><strong>Legal obligations</strong> — compliance with applicable laws</li>
             </ul>
@@ -317,6 +317,7 @@
                         <tr><td>Google Vertex AI</td><td>Google LLC</td><td>AI assistant, receipt &amp; statement parsing</td><td>Financial data, chat messages, document images (see Section 6a)</td></tr>
                         <tr><td>RevenueCat</td><td>RevenueCat, Inc.</td><td>Subscription management</td><td>Purchase history, subscription status, user ID</td></tr>
                         <tr><td>Firebase Cloud Messaging</td><td>Google LLC</td><td>Push notifications</td><td>Device push token</td></tr>
+                        <tr><td>Meta Pixel<br><em>(website only, consent-gated)</em></td><td>Meta Platforms Ireland Ltd.</td><td>Marketing attribution on getquro.app</td><td>IP address, browser/device info, page-view event, Meta cookies (_fbp, fr) — only after you accept on the website cookie banner</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -360,6 +361,32 @@
 
             <p><strong>Privacy masking:</strong> In Family Space, other members' individual data is masked before being sent to AI.</p>
             <p><strong>AI features are optional.</strong> The free tier provides full access to manual transaction entry, budgets, accounts, scheduled payments, and Family Space without using AI. AI features (chat assistant, receipt scanning, bank statement import) require an active <strong>Quro Pro</strong> subscription. AI access is licensed per individual user — Pro is not extended to other Family Space members through the owner's subscription.</p>
+        </div>
+
+        <div class="card">
+            <h2>6c. Website Cookies &amp; Meta Pixel (getquro.app)</h2>
+            <p>This section applies to our website at <strong>getquro.app</strong>. It does not describe data processed inside the iOS App.</p>
+
+            <h3>Strictly necessary</h3>
+            <p>The website uses one strictly necessary storage entry (<code>quro_consent</code> in <code>localStorage</code>) to remember your choice on the cookie banner. No tracking occurs from this entry. It is set under our legitimate interest in honoring your consent decision (Art. 6(1)(f) GDPR) and does not require consent under § 25(2) TTDSG.</p>
+
+            <h3>Marketing cookies — Meta Pixel</h3>
+            <p>Only if you click <strong>"Принять" / Accept</strong> on the cookie banner, we load the <strong>Meta Pixel</strong> (provider: Meta Platforms Ireland Ltd., 4 Grand Canal Square, Dublin 2, Ireland). The Pixel is a JavaScript snippet from <code>connect.facebook.net</code> that fires a <code>PageView</code> event and sets Meta cookies (typically <code>_fbp</code>, <code>fr</code>) in your browser.</p>
+            <p><strong>Purpose:</strong> measure the effectiveness of our Facebook / Instagram advertising, build conversion statistics, and (in aggregated form) optimize ad delivery to similar audiences. We do <em>not</em> use the Pixel for cross-site behavioral profiling beyond Meta's advertising ecosystem.</p>
+            <p><strong>Data processed:</strong> IP address (truncated by Meta), user agent / browser and device information, referring URL, the fact that you visited getquro.app, page-view event, and Meta cookie identifiers. Meta may link this to your Facebook / Instagram account if you are logged into one.</p>
+            <p><strong>Legal basis:</strong> your prior, freely given, specific, informed and unambiguous consent under <strong>Art. 6(1)(a) GDPR</strong> and <strong>§ 25(1) TTDSG</strong> (Germany). Until you accept, no Pixel script is loaded and no Meta cookies are set.</p>
+            <p><strong>Joint controllership:</strong> for the collection and transmission of Pixel data to Meta we act as joint controllers with Meta within the meaning of <strong>Art. 26 GDPR</strong>, under the <a href="https://www.facebook.com/legal/controller_addendum" target="_blank" rel="noopener">Controller Addendum</a>. Meta's subsequent processing is governed by Meta's own <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+            <p><strong>International transfers:</strong> Meta may transfer data to the United States. Transfers are based on the EU-US Data Privacy Framework (Meta Platforms, Inc. is certified) and, where applicable, the EU Standard Contractual Clauses.</p>
+            <p><strong>Retention:</strong> Meta cookies expire up to 90 days after they are set or refreshed. Server-side data is retained by Meta per its own retention schedule.</p>
+
+            <h3>Withdrawing consent / opt-out</h3>
+            <p>You can withdraw your consent at any time, with effect for the future:</p>
+            <ul>
+                <li>Click the <strong>"Cookies"</strong> link in the website footer to re-open the cookie banner and choose <strong>"Отказаться" / Decline</strong>.</li>
+                <li>Clear <code>localStorage</code> for getquro.app and the <code>_fbp</code> / <code>fr</code> cookies via your browser settings.</li>
+                <li>Adjust your ad preferences directly with Meta: <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">facebook.com/adpreferences</a>.</li>
+            </ul>
+            <p>If you decline or have not yet accepted, the Pixel script is never loaded and no marketing cookies are set. Withdrawing consent does not affect the lawfulness of processing carried out before the withdrawal.</p>
         </div>
 
         <div class="card">
@@ -479,11 +506,12 @@
             <p>Oleh Herasymenko<br>
             Friedrichshafen, Germany<br>
             Email: <a href="mailto:thevaltorna@gmail.com">thevaltorna@gmail.com</a><br>
-            Support Website: <a href="https://0g3ra.github.io/quro-legal">https://0g3ra.github.io/quro-legal</a></p>
+            Support Website: <a href="https://getquro.app">https://getquro.app</a></p>
         </div>
 
         <div class="card">
             <h2>16. Changelog</h2>
+            <p><strong>Version 1.2 (2026-05-15)</strong> — Added Section 6c describing website cookies and Meta Pixel on getquro.app: consent-gated loading, joint controllership with Meta (Art. 26 GDPR), legal basis Art. 6(1)(a) GDPR / § 25(1) TTDSG, EU-US Data Privacy Framework transfers, and withdrawal options. Added Meta Pixel row to the Third-Party Services table. Clarified consent reference in Section 5.</p>
             <p><strong>Version 1.1 (2026-05-12)</strong> — Removed legacy Basic and Family subscription tiers (only unified Pro plan remains). Family Space is now available to all users at no cost. AI features access is per-individual-user (not per-family). AI consent is now given via Welcome screen acceptance, not via a separate first-use prompt. Added documentation of temporary anonymous Firebase authentication during onboarding.</p>
             <p><strong>Version 1.0 (2026-03-31)</strong> — Initial release.</p>
         </div>
