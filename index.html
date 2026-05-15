@@ -1191,22 +1191,42 @@
     })();
   </script>
 
-  <!-- ============ APP STORE CAMPAIGN FORWARDING ============ -->
+  <!-- ============ APP STORE CAMPAIGN FORWARDING + LEAD EVENT ============ -->
   <script>
     (function () {
+      // 1) Forward ct / utm_campaign from landing URL to every App Store button
       try {
         var params = new URLSearchParams(window.location.search);
         var ct = params.get('ct') || params.get('utm_campaign');
-        if (!ct) return;
-        ct = ct.replace(/[^A-Za-z0-9_\-]/g, '_').slice(0, 255);
-        document.querySelectorAll('a.btn-store').forEach(function (a) {
-          try {
-            var u = new URL(a.href);
-            u.searchParams.set('ct', ct);
-            a.href = u.toString();
-          } catch (e) {}
-        });
+        if (ct) {
+          ct = ct.replace(/[^A-Za-z0-9_\-]/g, '_').slice(0, 255);
+          document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
+            try {
+              var u = new URL(a.href);
+              u.searchParams.set('ct', ct);
+              a.href = u.toString();
+            } catch (e) {}
+          });
+        }
       } catch (e) {}
+
+      // 2) Fire Meta Pixel Lead event on App Store click, then navigate after 200ms
+      //    Only fires if user previously granted consent (fbq exists). No-op otherwise.
+      document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var target = link.href;
+          if (typeof window.fbq === 'function') {
+            e.preventDefault();
+            try {
+              window.fbq('track', 'Lead', {
+                content_name: 'Quro App Install Click',
+                content_category: 'app_install_intent'
+              });
+            } catch (err) {}
+            setTimeout(function () { window.location.href = target; }, 200);
+          }
+        });
+      });
     })();
   </script>
 
