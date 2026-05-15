@@ -878,7 +878,7 @@
         <img src="assets/icon.png" alt="" />
         <span class="brand-name">Quro</span>
       </a>
-      <a href="https://apps.apple.com/app/id6760856559" class="btn-store" target="_blank" rel="noopener">
+      <a href="https://apps.apple.com/app/quro-budget-expense-tracker/id6760856559?ppid=c905c53f-075a-4568-8dce-b58609b90101" class="btn-store" target="_blank" rel="noopener">
         <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM275.4 78.4c20.9-24.8 19-47.3 18.4-55.4-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.9 20 1.5 38.3-8.8 53.3-26.3z"/></svg>
         Скачать
       </a>
@@ -895,7 +895,7 @@
       AI-ассистент по личным финансам, который понимает обычный язык. Спрашивай о тратах, добавляй покупки одной фразой — без таблиц и Excel.
     </p>
     <div class="hero-cta">
-      <a href="https://apps.apple.com/app/id6760856559" class="btn-store btn-store-lg" target="_blank" rel="noopener">
+      <a href="https://apps.apple.com/app/quro-budget-expense-tracker/id6760856559?ppid=c905c53f-075a-4568-8dce-b58609b90101" class="btn-store btn-store-lg" target="_blank" rel="noopener">
         <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM275.4 78.4c20.9-24.8 19-47.3 18.4-55.4-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.9 20 1.5 38.3-8.8 53.3-26.3z"/></svg>
         Загрузить в App Store
       </a>
@@ -1145,7 +1145,7 @@
       <p class="final-sub">
         Базовый план — навсегда. AI-чат, сканер чеков и импорт банковских выписок открываются по подписке Pro. Семейное пространство — бесплатно для всех.
       </p>
-      <a href="https://apps.apple.com/app/id6760856559" class="btn-store btn-store-lg" target="_blank" rel="noopener">
+      <a href="https://apps.apple.com/app/quro-budget-expense-tracker/id6760856559?ppid=c905c53f-075a-4568-8dce-b58609b90101" class="btn-store btn-store-lg" target="_blank" rel="noopener">
         <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM275.4 78.4c20.9-24.8 19-47.3 18.4-55.4-18.5 1.1-39.9 12.6-52.1 26.8-13.4 15.2-21.3 34-19.6 54.9 20 1.5 38.3-8.8 53.3-26.3z"/></svg>
         Загрузить в App Store
       </a>
@@ -1190,6 +1190,26 @@
       document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     })();
   </script>
+
+  <!-- ============ APP STORE CAMPAIGN FORWARDING ============ -->
+  <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var ct = params.get('ct') || params.get('utm_campaign');
+        if (!ct) return;
+        ct = ct.replace(/[^A-Za-z0-9_\-]/g, '_').slice(0, 255);
+        document.querySelectorAll('a.btn-store').forEach(function (a) {
+          try {
+            var u = new URL(a.href);
+            u.searchParams.set('ct', ct);
+            a.href = u.toString();
+          } catch (e) {}
+        });
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- ============ COOKIE CONSENT BANNER ============ -->
   <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
     <div class="cookie-text">
