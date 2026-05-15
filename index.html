@@ -1362,7 +1362,8 @@
         if (override === 'en') return;
         var preferred = override || ((navigator.language || 'en').toLowerCase().split('-')[0]);
         if (preferred === 'ru' || preferred === 'uk') {
-          window.location.replace('/' + preferred + '/');
+          // Preserve query string (e.g. ?ct= from Meta ads) and hash through the redirect
+          window.location.replace('/' + preferred + '/' + window.location.search + window.location.hash);
         }
       } catch (e) {}
     })();
@@ -1371,8 +1372,17 @@
   <script>
     (function () {
       document.querySelectorAll('.lang-switcher a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          try { localStorage.setItem('quro_lang', a.getAttribute('hreflang')); } catch (e) {}
+        a.addEventListener('click', function (e) {
+          try { localStorage.setItem('quro_lang', a.getAttribute('hreflang')); } catch (e2) {}
+          // Preserve current query string + hash across locale switch
+          try {
+            var search = window.location.search;
+            var hash = window.location.hash;
+            if (search || hash) {
+              e.preventDefault();
+              window.location.href = a.getAttribute('href') + search + hash;
+            }
+          } catch (e3) {}
         });
       });
     })();

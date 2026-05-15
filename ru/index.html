@@ -1356,8 +1356,17 @@
   <script>
     (function () {
       document.querySelectorAll('.lang-switcher a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          try { localStorage.setItem('quro_lang', a.getAttribute('hreflang')); } catch (e) {}
+        a.addEventListener('click', function (e) {
+          try { localStorage.setItem('quro_lang', a.getAttribute('hreflang')); } catch (e2) {}
+          // Preserve current query string + hash across locale switch
+          try {
+            var search = window.location.search;
+            var hash = window.location.hash;
+            if (search || hash) {
+              e.preventDefault();
+              window.location.href = a.getAttribute('href') + search + hash;
+            }
+          } catch (e3) {}
         });
       });
     })();
