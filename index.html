@@ -839,13 +839,19 @@
       .cookie-banner {
         flex-direction: column;
         align-items: stretch;
-        padding: 16px;
+        padding: 14px 16px;
+        gap: 12px;
         left: 12px;
         right: 12px;
-        bottom: 12px;
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      }
+      .cookie-text {
+        flex: 0 0 auto;
+        font-size: 12.5px;
+        line-height: 1.45;
       }
       .cookie-actions { width: 100%; }
-      .btn-cookie { flex: 1; }
+      .btn-cookie { flex: 1; padding: 11px 12px; }
     }
     @media (prefers-reduced-motion: reduce) {
       .cookie-banner { transition: opacity 0.15s linear; transform: none; opacity: 0; pointer-events: none; }
