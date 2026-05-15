@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://getquro.app/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getquro.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://getquro.app/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getquro.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getquro.app/uk/" />
+  </url>
+  <url>
+    <loc>https://getquro.app/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getquro.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://getquro.app/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getquro.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getquro.app/uk/" />
+  </url>
+  <url>
+    <loc>https://getquro.app/uk/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getquro.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://getquro.app/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://getquro.app/ru/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getquro.app/uk/" />
+  </url>
+  <url><loc>https://getquro.app/privacy.html</loc></url>
+  <url><loc>https://getquro.app/terms.html</loc></url>
+  <url><loc>https://getquro.app/impressum.html</loc></url>
+</urlset>

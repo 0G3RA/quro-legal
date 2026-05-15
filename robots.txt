@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getquro.app/sitemap.xml
